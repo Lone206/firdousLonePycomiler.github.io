@@ -1,0 +1,2403 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>LONEPYCOMPILER</title>
+  <link rel="stylesheet" href="codemirror.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="foldgutter.css">
+<link rel="stylesheet" href="css2">
+ <link type="text/css" rel="stylesheet" href="css2(1)"></head>
+<body>
+<div class="wrapper side-panel-close">
+  <div class="main">
+<div id="code101">
+  <div id="topbar" class="prevent-select"style="height:35px;align-items:top;padding:2px;>
+</span></span>
+</div>
+<div class="prevent-select">
+<button id="skulpt_run" class="btn"><span class="material-symbols-outlined">
+</span>RUN</button>
+<button id="skulpt_stop" class="btn" style="display: none;"><span class="material-symbols-outlined">
+</span>STOP</button>
+<button id="clearoutput" class="btn"><span class="material-symbols-outlined">
+</span>CLEAR</button>
+<button id="textIncrease" class="btn2">&nbsp;<span class="material-symbols-outlined">
+</span>A+</button>
+<button id="textDecrease" class="btn2">&nbsp;<span class="material-symbols-outlined">
+</span>A-</button>  
+<button id="midnight" class="btn2">&nbsp;<span class="material-symbols-outlined">
+</span>THEME-1</button>
+<button id="eclipse" class="btn2">&nbsp;<span class="material-symbols-outlined">
+</span>THEME-2</button>
+<button id="seti" class="btn2">&nbsp;<span class="material-symbols-outlined">
+</span>THEME-3</button>
+<button id="resetBtn" class="btn">&nbsp;<span class="material-symbols-outlined">
+</span>RESET</button>
+<button id="downloadBtn" class="btn"><span class="material-symbols-outlined">
+</span>DOWNLOAD</button>
+<button id="helpBtn" class="btn"><span class="material-symbols-outlined">
+</span>HELP</button>
+</div>   
+  <div id="IDE"style="margin-top:1px;">
+  <div id="codeSection"style="background: #555;color: #D1EDFF;">
+  <div id="codeEditor" style="background-color: rgb(15, 25, 42);">
+  <div id="tablesplit" style="display:table; table-layout: fixed; width: 100%;height:100%;">
+<div class="tabbox" id="tab" style="display:table-row;">
+<nav class="nav">
+<ul>
+	<li class="selected" id="firstTab"style="margin-left:30px;"><span>main.py</span></li>
+
+
+	
+</ul>
+
+<div class="tabAdd prevent-select"><span class="iconfont">+</span></div>
+</nav>
+</div>
+<div class="tabCon" style="display:table-row;">
+<section class="selected">
+<textarea id="code" style="display: none;">
+#Type your code here and start you journey to Python Programming
+
+</textarea>
+
+</div>
+</div>  
+</div>  
+
+<div id="splitbar"></div>
+
+<div id="preview" class="midnight"style="background: #0F192A;padding:20px;min-width:47%;max-width:47%;">
+
+  <div id="codeCanvas" style="display: none;">
+
+	<div id="mycanvas" height="400" width="100%"></div>
+  </div>
+
+  <div id="codeOutput">
+
+	<pre id="edoutput"></pre>
+
+	<div id="inputs">
+		<div id="inputPrompt" style="display: none;"><div id="inputMsg"></div><span id="programInputField" contenteditable=""></span><span class="material-symbols-outlined" id="submitInput">
+task_alt
+</span></div>
+	</div>
+	<div id="error"></div>
+  </div>
+
+  </div>
+
+</div>
+
+  </div>  
+<div id="footer"> 
+<span style="color:#777;">| Python Compiler | Design & Development | Lone A Firdous |</span>
+<span style="color:#777;margin-left:30%;"> |  Course Editors  | Youssef Yasser Kusibati |  Abdulrahman Mohammed A Aljohani   |   Grade 12-I   | 2024-25 |</span> 
+</div>
+</div>
+</div>
+
+	
+  
+<button class="side-panel-toggle prevent-select" type="button"style=" background: #000;">
+<span class="material-symbols-outlined sp-icon-open"style="color:red;margin-top:85%;">
+<div class="rotate-text-left">OPEN PYTHON TUTORIAL</div>
+</span>
+<span class="material-symbols-outlined sp-icon-close"style="color:red;font-size:20px;">
+>>
+</span>
+</button>
+<div class="side-panel">
+<div id="help"style="overflow-y:hidden;scrollbar-width:none;"> <div id="topbar" class="prevent-select"style="overflow-y:hidden;scrollbar-width:none;border-radius:0px;background: #0F192A;">
+ <img src="python-101.png" width="17" align="absmiddle">PYTHON TUTORIAL:BASICS
+</div>
+
+<div style="overflow-y:auto;scrollbar-width:none;height: 536px;">
+ <ul id="accordion" class="accordion">
+
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Intro<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:#5e5a5a;font-size: 13px;text-align:center;">Python is one of the most widely used pro
+gramming languages nowadays. Despite being a general-purpose language, its applications span a wide range, including web development, IoT, machine learning, and artificial intelligence.
+
+This Python tutorial is to assist the basic programmers in understanding the fundamentals to more complex ideas of the Python programming language. Upon finishing this training, you will have a great deal of proficiency with Python, which will allow you to advance and become a highly skilled software engineer.
+<li>Video Tutorial</li>
+<iframe src="HDD.mp4"style="border-radius:0px;height:150px;top:0%; width:100%;overflow-x:hidden;overflow-y:auto;scrollbar-width: none;margin-left:0%;justify-content: center;background:#000;border:none;border-bottom: 0.1px dashed #171616;"></iframe>
+</span></li>
+   <li><span style="color:white;font-size: 12px;font-weight: bold;">* What is Python? *</span></li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;">Python is a widely used high-level, object-oriented, interpreted, general-purpose computer language. Python is a garbage-collected programming language with dynamic typing. Guido van Rossum designed it between 1985 and 1990. The GNU General Public License (GPL) is used to distribute Python source code, much like it is for Perl.
+</span>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"> * Python Jobs *</span></li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;">Today, a Python Programmer with 3-5 years of expertise is asking for an annual salary of roughly $150,000, and Python is the most demanding programming language. However, this may vary based on the location of the job. It's impossible to list all of the firms that use Python, but a few big ones are:
+Google-Intel-NASA-PayPal-Facebook-IBM-Amazon-Netflix-Pinterest-Uber and many more...
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"> * Why to Learn Python? *</span></li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is Open Source which means its available free of 
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is simple and so easy to learn"</li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is versatile and can be used to create many different things."</li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python has powerful development libraries include AI, ML etc."</li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;">#Python is much in demand and ensures high salary"</li>
+<li><span style="color:white;font-size: 12px;font-weight: bold;"> * Python Features*</span></li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is Interpreted − Python is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP."</li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is Interactive − You can actually sit at a Python prompt and interact with the interpreter directly to write your programs.</li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is Object-Oriented − Python supports Object-Oriented style or technique of programming that encapsulates code within objects.</li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is a Beginner's Language − Python is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.</li>
+<li><span style="color:white;font-size: 12px;font-weight: bold;"> * My Python Online Compiler *</span></li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;">My Python programming tutorial provides various examples to explain different programming concepts. I have provided Online Python Compiler/Interpreter on the left side of the screen. You can Edit and Execute almost all the 
+examples directly from your browser without the need to set up your development environment.</li>
+
+</ul>
+  </li>
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Syntax:Print()<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+<li>Video Tutorial</li>
+<iframe src="HDD.mp4"style="border-radius:0px;height:150px;top:0%; width:100%;overflow-x:hidden;overflow-y:auto;scrollbar-width: none;margin-left:0%;justify-content: center;background:#000;border:none;border-bottom: 0.1px dashed #171616;"></iframe>
+</span></li>
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+
+
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 1:Print a string</span>
+<span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 2:Print Multiple Values</span>
+<span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 3: Print variables</span>
+<span class="annotate"># Declare a variable</span>name = "Alice"
+<span class="annotate"># Declare another variable</span>age = 25
+<span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 4: Use f-string</span>
+<span class="annotate"># Declare variables</span>name = "Bob"
+<span class="annotate"># Declare another variable</span>age = 30
+<span class="annotate"># Use f-string to print</span>print("My name is", name, "and I am", age, "years old.")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 5: Print numbers</span>
+<span class="annotate"># Print an integer</span>print(100)
+<span class="annotate"># Print a float</span>print(3.14)</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 6: Concatenate strings</span>
+<span class="annotate"># Declare string variables</span>greeting = "Hello"
+<span class="annotate"># Declare another string variable</span>name = "Charlie"
+<span class="annotate"># Concatenate and print</span>print(greeting, ",", name, "!")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 7: Print escape characters</span>
+<span class="annotate"># Print with new line</span>print("Hello\nWorld")
+<span class="annotate"># Print with tab space</span>print("Hello\tWorld")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 8: Print a list</span>
+<span class="annotate"># Declare a list</span>fruits = ["apple", "banana", "cherry"]
+<span class="annotate"># Print the list</span>print(fruits)</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 9: Suppress newline in print</span>
+<span class="annotate"># Print without new line</span>print("Hello", end=" ")
+<span class="annotate"># Continue on the same line</span>print("World")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 10: Print a formatted float</span>
+<span class="annotate"># Print a formatted float with 2 decimal places</span>print("Pi is approximately:", round(3.14159, 2))</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 11: Print with padding</span>
+<span class="annotate"># Print with padding</span>print("Number:", str(7).zfill(3))</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 12: Print left-aligned text</span>
+<span class="annotate"># Print left-aligned text</span>print("Hello", " ", "World!")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 13: Print right-aligned text</span>
+<span class="annotate"># Print right-aligned text</span>print(" ", "Hello", "World!")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 14: Print centered text</span>
+<span class="annotate"># Print centered text</span>print(" ", "Hello", "World!")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 15: Print with string interpolation</span>
+<span class="annotate"># String interpolation in print</span>name = "Alice"
+<span class="annotate"># Print interpolated string</span>print("Hello", name, "!")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 16: Print a complex number</span>
+<span class="annotate"># Print a complex number</span>print(3 + 5j)</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 17: Print boolean expressions</span>
+<span class="annotate"># Print a boolean expression</span>print(5 > 3)</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 18: Print file content</span>
+<span class="annotate"># Print content of a file</span>with open('example.txt', 'r') as file:
+<span class="annotate">  </span>  print(file.read())</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 19: Print with a loop</span>
+<span class="annotate"># Print numbers using a loop</span>for i in range(5):
+<span class="annotate"></span>print(i)</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 20: Print exception handling</span>
+<span class="annotate"># Print an error message in exception handling</span>try:
+<span class="annotate">  </span>  result = 10 / 0
+<span class="annotate"></span>except ZeroDivisionError:
+<span class="annotate">   </span> print("Error: Division by zero!")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 21: Print list comprehension</span>
+<span class="annotate"># Print list comprehension result</span>numbers = [x**2 for x in range(5)]
+<span class="annotate"></span>print(numbers)</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 22: Print date and time</span>
+<span class="annotate"># Print the current date and time</span>import datetime
+<span class="annotate"></span>print(datetime.datetime.now())</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 23: Print memory address of a variable</span>
+<span class="annotate"># Print memory address of a variable</span>x = 10
+<span class="annotate"></span>print(hex(id(x)))</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 24: Print formatted dictionary</span>
+<span class="annotate"># Print formatted dictionary</span>my_dict = {"name": "John", "age": 30}
+<span class="annotate"></span>print("Name:", my_dict["name"], "Age:", my_dict["age"])</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 25: Print after importing a module</span>
+<span class="annotate"># Import math module and print a value</span>import math
+<span class="annotate"></span>print(math.pi)</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 26: Print bytes</span>
+<span class="annotate"># Print a byte object</span>byte_data = b"Hello"
+<span class="annotate"></span>print(byte_data)</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 27: Print list elements on separate lines</span>
+<span class="annotate"># Print each element of a list on a new line</span>fruits = ["apple", "banana", "cherry"]
+<span class="annotate"></span>for fruit in fruits:
+<span class="annotate"> </span>print(fruit)</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 28: Print with keyword arguments</span>
+<span class="annotate"># Print using keyword arguments</span>print("Hello", "World", sep="-", end="!")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 29: Print a tuple</span>
+<span class="annotate"># Print a tuple</span>my_tuple = (1, 2, 3)
+<span class="annotate"></span>print(my_tuple)</li>
+
+</ul>
+</li>
+  <li>
+    <div class="link"><span class="icon material-symbols-outlined">
+</span>Python Syntax:Input()<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+<li>Video Tutorial</li>
+<iframe src="HDD.mp4"style="border-radius:0px;height:150px;top:0%; width:100%;overflow-x:hidden;overflow-y:auto;scrollbar-width: none;margin-left:0%;justify-content: center;background:#000;border:none;border-bottom: 0.1px dashed #171616;"></iframe>
+</span></li>
+
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 1: Text Input</span>
+<span class="annotate"># enter a text input</span>text = input("Enter some text: ")
+<span class="annotate"># print the entered text</span>print(f"You entered: {text}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 2: Integer Input</span>
+<span class="annotate"># enter an integer input</span>number = int(input("Enter an integer: "))
+<span class="annotate"># print the entered number</span>print(f"The number you entered is: {number}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 3: Float Input</span>
+<span class="annotate"># enter a float input</span>decimal = float(input("Enter a decimal number: "))
+<span class="annotate"># print the entered float</span>print(f"The decimal number you entered is: {decimal}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 4: Converting String to Integer</span>
+<span class="annotate"># enter a string input</span>string_number = input("Enter a number as a string: ")
+<span class="annotate"># convert the string to an integer</span>converted_number = int(string_number)
+<span class="annotate"># print the converted integer</span>print(f"Converted integer: {converted_number}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 5: Arithmetic Operation</span>
+<span class="annotate"># input two numbers</span>num1 = int(input("Enter the first number: "))
+<span class="annotate"></span>num2 = int(input("Enter the second number: "))
+<span class="annotate"># perform addition</span>sum_result = num1 + num2
+<span class="annotate"># print the result</span>print(f"The sum is: {sum_result}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 6: Character Input</span>
+<span class="annotate"># enter a single character</span>char = input("Enter a character: ")[0]
+<span class="annotate"># print the entered character</span>print(f"You entered: {char}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 7: Boolean Conversion</span>
+<span class="annotate"># enter a value</span>value = input("Enter any value (true/false): ")
+<span class="annotate"># convert the value to a boolean</span>boolean_value = bool(value)
+<span class="annotate"># print the boolean value</span>print(f"Boolean conversion result: {boolean_value}")
+</li>
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 8: Multiple Inputs in One Line</span>
+<span class="annotate"># enter two numbers separated by a space</span>num1, num2 = map(int, input("Enter two numbers separated by space: ").split())
+<span class="annotate"># print the entered numbers</span>print(f"First number: {num1}, Second number: {num2}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 9: Input with a Default Value</span>
+<span class="annotate"># input with default value handling</span>name = input("Enter your name (default is 'Guest'): ") or "Guest"
+<span class="annotate"># print the name</span>print(f"Hello, {name}!")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 10: Input and Type Conversion to List</span>
+<span class="annotate"># enter numbers separated by commas</span>numbers = list(map(int, input("Enter numbers separated by commas: ").split(',')))
+<span class="annotate"># print the list of numbers</span>print(f"List of numbers: {numbers}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 11: Checking Input Type</span>
+<span class="annotate"># enter any input</span>value = input("Enter any value: ")
+<span class="annotate"># print the type of the entered value</span>print(f"The type of entered value is: {type(value)}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 12: Summing Multiple Integer Inputs</span>
+<span class="annotate"># input multiple integers separated by space</span>numbers = map(int, input("Enter multiple integers separated by space: ").split())
+<span class="annotate"># sum the entered numbers</span>total = sum(numbers)
+<span class="annotate"># print the total sum</span>print(f"The total sum is: {total}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 13: Inputting and Concatenating Strings</span>
+<span class="annotate"># enter two strings</span>string1 = input("Enter the first string: ")
+<span class="annotate"></span>string2 = input("Enter the second string: ")
+<span class="annotate"># concatenate the strings</span>concatenated = string1 + " " + string2
+<span class="annotate"># print the concatenated result</span>print(f"Concatenated string: {concatenated}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 14: Inputting and Multiplying a String</span>
+<span class="annotate"># enter a string and a number</span>text = input("Enter a string: ")
+<span class="annotate"></span>repeat = int(input("Enter the number of repetitions: "))
+<span class="annotate"># multiply the string</span>result = text * repeat
+<span class="annotate"># print the repeated string</span>print(f"Repeated string: {result}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 15: Inputting and Finding Maximum Value</span>
+<span class="annotate"># enter multiple integers separated by space</span>numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+<span class="annotate"># find the maximum value</span>max_value = max(numbers)
+<span class="annotate"># print the maximum value</span>print(f"The maximum value is: {max_value}")
+</li>
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 16: Inputting and Finding Minimum Value</span>
+<span class="annotate"># enter multiple integers separated by space</span>numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+<span class="annotate"># find the minimum value</span>min_value = min(numbers)
+<span class="annotate"># print the minimum value</span>print(f"The minimum value is: {min_value}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 17: Inputting and Calculating Average</span>
+<span class="annotate"># enter multiple integers separated by space</span>numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+<span class="annotate"># calculate the average</span>average = sum(numbers) / len(numbers)
+<span class="annotate"># print the average</span>print(f"The average is: {average}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 18: Inputting a List and Sorting It</span>
+<span class="annotate"># enter multiple integers separated by space</span>numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+<span class="annotate"># sort the numbers</span>sorted_numbers = sorted(numbers)
+<span class="annotate"># print the sorted list</span>print(f"Sorted numbers: {sorted_numbers}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 19: Inputting and Checking for Duplicates</span>
+<span class="annotate"># enter multiple integers separated by space</span>numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+<span class="annotate"># check for duplicates</span>has_duplicates = len(numbers) != len(set(numbers))
+<span class="annotate"># print if duplicates exist</span>print(f"Duplicates exist: {has_duplicates}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 20: Inputting and Removing Duplicates</span>
+<span class="annotate"># enter multiple integers separated by space</span>numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+<span class="annotate"># remove duplicates</span>unique_numbers = list(set(numbers))
+<span class="annotate"># print the unique list</span>print(f"Unique numbers: {unique_numbers}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 21: Inputting and Counting Occurrences</span>
+<span class="annotate"># enter a string</span>text = input("Enter a string: ")
+<span class="annotate"># input character to count</span>char = input("Enter character to count: ")
+<span class="annotate"># count occurrences</span>count = text.count(char)
+<span class="annotate"># print the count</span>print(f"The character '{char}' appears {count} times.")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 22: Inputting and Replacing Characters in a String</span>
+<span class="annotate"># enter a string</span>text = input("Enter a string: ")
+<span class="annotate"># enter character to replace and the new character</span>old_char = input("Enter character to replace: ")
+<span class="annotate"></span>new_char = input("Enter new character: ")
+<span class="annotate"># replace characters</span>new_text = text.replace(old_char, new_char)
+<span class="annotate"># print the new string</span>print(f"Modified string: {new_text}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 23: Inputting and Checking String Length</span>
+<span class="annotate"># enter a string</span>text = input("Enter a string: ")
+<span class="annotate"># check the length of the string</span>length = len(text)
+<span class="annotate"># print the length</span>print(f"The length of the string is: {length}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 24: Inputting and Capitalizing a String</span>
+<span class="annotate"># enter a string</span>text = input("Enter a string: ")
+<span class="annotate"># capitalize the string</span>capitalized = text.capitalize()
+<span class="annotate"># print the capitalized string</span>print(f"Capitalized string: {capitalized}")
+</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 25: Inputting and Converting to Upper Case</span>
+<span class="annotate"># enter a string</span>text = input("Enter a string: ")
+<span class="annotate"># convert to upper case</span>upper_case = text.upper()
+<span class="annotate"># print the upper case string</span>print(f"Upper case string: {upper_case}")
+</li>
+
+<!-- More examples can be generated similarly for the remaining 30 inputs -->
+
+    </ul>
+  </li>
+   
+     <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Python Variables<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+<li>Video Tutorial</li>
+<iframe src="HDD.mp4"style="border-radius:0px;height:150px;top:0%; width:100%;overflow-x:hidden;overflow-y:auto;scrollbar-width: none;margin-left:0%;justify-content: center;background:#000;border:none;border-bottom: 0.1px dashed #171616;"></iframe>
+</span></li>
+
+      
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 1:Assign Value to Variable</span>
+<span class="annotate"># assigning value to a variable</span>age = 25
+<span class="annotate"># print variable</span>print(f"Age: {age}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 2:Assign-Reassign Variable</span>
+<span class="annotate"># assigning value</span>x = 10
+<span class="annotate"># reassigning new value</span>x = 20
+<span class="annotate"># print variable</span>print(f"Updated x: {x}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 3: Assign a String to a Variable</span>
+<span class="annotate"># assigning a string</span>name = "John"
+<span class="annotate"># print string</span>print(f"Name: {name}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 4: Assign a Float to a Variable</span>
+<span class="annotate"># assigning a float value</span>pi = 3.14159
+<span class="annotate"># print float</span>print(f"Value of pi: {pi}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 5: Assign Boolean to a Variable</span>
+<span class="annotate"># assigning boolean value</span>is_active = True
+<span class="annotate"># print boolean</span>print(f"Is Active: {is_active}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 6: Assign None to a Variable</span>
+<span class="annotate"># assigning None</span>result = None
+<span class="annotate"># print None</span>print(f"Result: {result}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 7: Assign Multiple Variables in One Line</span>
+<span class="annotate"># assigning multiple variables</span>a, b, c = 1, 2, 3
+<span class="annotate"># print variables</span>print(f"a: {a}, b: {b}, c: {c}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 8: Swap Two Variables</span>
+<span class="annotate"># swapping variables</span>x, y = 5, 10
+<span class="annotate"># swapping variables</span>x, y = y, x
+<span class="annotate"># print swapped values</span>print(f"x: {x}, y: {y}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 9: Assign a List to a Variable</span>
+<span class="annotate"># assigning a list</span>colors = ["red", "green", "blue"]
+<span class="annotate"># print list</span>print(f"Colors: {colors}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 10: Assign a Tuple to a Variable</span>
+<span class="annotate"># assigning a tuple</span>dimensions = (1920, 1080)
+<span class="annotate"># print tuple</span>print(f"Dimensions: {dimensions}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 11: Assign a Dictionary to a Variable</span>
+<span class="annotate"># assigning a dictionary</span>person = {"name": "Alice", "age": 30}
+<span class="annotate"># print dictionary</span>print(f"Person: {person}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 12: Assign and Print Using f-string</span>
+<span class="annotate"># assigning variables</span>name = "Bob"
+<span class="annotate"></span>age = 28
+<span class="annotate"># print using f-string</span>print(f"{name} is {age} years old")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 13: Assign a Boolean Expression Result</span>
+<span class="annotate"># assigning a boolean expression</span>is_adult = age >= 18
+<span class="annotate"># print result</span>print(f"Is Adult: {is_adult}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 14: Assign a Function Return Value</span>
+<span class="annotate"># defining a function</span>def greet(): return "Hello"
+<span class="annotate"># assigning return value</span>message = greet()
+<span class="annotate"># print message</span>print(message)</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 15: Assign a Set to a Variable</span>
+<span class="annotate"># assigning a set</span>fruits = {"apple", "banana", "cherry"}
+<span class="annotate"># print set</span>print(f"Fruits: {fruits}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 16: Assign and Update a List</span>
+<span class="annotate"># assigning a list</span>numbers = [1, 2, 3]
+<span class="annotate"># update list</span>numbers.append(4)
+<span class="annotate"># print updated list</span>print(f"Updated List: {numbers}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 17: Assign and Check Type of Variable</span>
+<span class="annotate"># assigning a value</span>value = 3.14
+<span class="annotate"># print type</span>print(f"Type: {type(value)}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 18: Assign Result of a Mathematical Expression</span>
+<span class="annotate"># assigning result</span>result = 5 + 3 * 2
+<span class="annotate"># print result</span>print(f"Result: {result}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 19: Assign and Print a Variable Using Format Method</span>
+<span class="annotate"># assigning a value</span>temperature = 36.6
+<span class="annotate"># print using format method</span>print("Temperature: {}".format(temperature))</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 20: Assign a Variable and Perform In-Place Addition</span>
+<span class="annotate"># assigning a value</span>count = 10
+<span class="annotate"># in-place addition</span>count += 5
+<span class="annotate"># print updated value</span>print(f"Count: {count}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 21: Assign a Variable and Perform Floor Division</span>
+<span class="annotate"># assigning a value</span>a = 17
+<span class="annotate"></span>b = 3
+<span class="annotate"># floor division</span>result = a // b
+<span class="annotate">print(f"Result: {result}")</li>
+
+<li><span style="color:white;font-size: 12px;font-weight: bold;"># Example 22: Assign Variable with Power of Another Variable</span>
+<span class="annotate"># assigning values</span>base = 2
+<span class="annotate"></span>exp = 3
+<span class="annotate"># power calculation</span>result = base ** exp
+<span class="annotate"># print result</span>print(f"{base}^{exp} = {result}")</li>
+
+<!-- More examples can be generated similarly for the remaining 28 variables -->
+
+
+
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Test Your Skills:Variables<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu"style="margin-left:1%;width:98%;padding-left: 0px;padding-right: 0px;margin-right:-3%; background: #000;overflow:hidden;">
+      
+  
+
+
+
+ <iframe src="testquizvariables.html"style="border-bottom-left-radius:0px;border-bottom-right-radius:0px;height:390px;top:0%;border:none; width:100%;overflow-x:hidden;overflow-y:auto;scrollbar-width: none;margin-left:0%;justify-content: center;"></iframe>
+<iframe src="minicompiler/index.html"scrolling="no"style="border-top-left-radius:0px;border-top-right-radius:0px;height:250px;top:0%; width:100%;overflow-x:hidden;overflow-y:hidden;scrollbar-width: none;margin-left:0%;justify-content: center;background:#000;border:none;border-bottom: 0.1px dashed #171616;"></iframe>
+</span></li>
+</li></ul>
+  </li>
+
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Python Operators<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+<li>Video Tutorial</li>
+<iframe src="HDD.mp4"style="border-radius:0px;height:150px;top:0%; width:100%;overflow-x:hidden;overflow-y:auto;scrollbar-width: none;margin-left:0%;justify-content: center;background:#000;border:none;border-bottom: 0.1px dashed #171616;"></iframe>
+</span></li>
+
+<li><span class="annotate">#Arithmetic Operators:</span>
+<span style="color:#a29696;font-size: 13px;text-align:center;">Arithmetic operators in Python are used to perform basic mathematical operations on numerical values.These operators are essential for performing arithmetic calculations in Python. Here’s a breakdown of how each operator is used:
+<li>
+x = a + b <span class="inline-annotate"># Adds two numbers</span><br>
+x = a - b         <span class="inline-annotate"># Subtracts two numbers</span><br>
+x = a * b        <span class="inline-annotate"># Multiplies two numbers</span><br>
+x = a / b        <span class="inline-annotate"># Divides two numbers</span><br>
+x = a % b        <span class="inline-annotate"># Remainder of division</span><br>
+x = a ** b      <span class="inline-annotate"># Power of a number</span><br>
+x = a // b      <span class="inline-annotate"># Floor division</span><br>
+</li>
+
+<li><span class="annotate">#Assignment Operators:</span>
+<span style="color:#a29696;font-size: 13px;text-align:center;">Assignment operators in Python are used to assign values to variables and to perform operations while assigning the result back to the same variable. They make code concise and improve readability when performing operations on variables.Here’s a breakdown of how each operator is used:
+<li>
+x = a      <span class="inline-annotate"># Assigns value</span><br>
+x += a     <span class="inline-annotate"># Adds and assigns</span><br>
+x -= a     <span class="inline-annotate"># Subtracts and assigns</span><br>
+x *= a     <span class="inline-annotate"># Multiplies and assigns</span><br>
+x /= a     <span class="inline-annotate"># Divides and assigns</span><br>
+x //= a    <span class="inline-annotate"># Floor divides and assigns</span><br>
+x %= a     <span class="inline-annotate"># Modulus and assigns</span><br>
+x **= a    <span class="inline-annotate"># Exponent and assigns</span><br>
+</li>
+
+<li><span class="annotate"># Comparison Operators:</span>
+<span style="color:#a29696;font-size: 13px;text-align:center;">Comparison operators in Python are used to compare two values or expressions. They evaluate to a boolean result, either True or False, and play a crucial role in programming for decision making:Here’s a breakdown of how each operator is used:
+<li>
+x == a     <span class="inline-annotate"># Equals</span><br>
+x != a     <span class="inline-annotate"># Not equal</span><br>
+x > a      <span class="inline-annotate"># Greater than</span><br>
+x < a      <span class="inline-annotate"># Less than</span><br>
+x >= a     <span class="inline-annotate"># Greater or equal</span><br>
+x <= a     <span class="inline-annotate"># Less or equal</span><br>
+</li>
+<li><span class="annotate"># Logical Operators:</span>
+<span style="color:#a29696;font-size: 13px;text-align:center;">Logical operators in Python are used to combine or modify boolean expressions, enabling more complex decision-making in your code.Here’s a breakdown of how each operator is used:
+<li>
+
+x = a and b  <span class="inline-annotate"># Logical AND</span><br>
+x = a or b   <span class="inline-annotate"># Logical OR</span><br>
+x = not a    <span class="inline-annotate"># Logical NOT</span><br>
+</li>
+
+<li><span class="annotate"># Bitwise Operators:</span>
+<span style="color:#a29696;font-size: 13px;text-align:center;">Bitwise operators in Python are used to perform operations on individual bits of integer values.Bitwise operations are often used in data encoding, compression algorithms, and cryptographic functions. They enable packing multiple values into a single integer, reducing memory usage. Here’s a breakdown of how each operator is used:
+<li>
+
+x = a & b    <span class="inline-annotate"># Bitwise AND</span><br>
+x = a | b    <span class="inline-annotate"># Bitwise OR</span><br>
+x = a ^ b    <span class="inline-annotate"># Bitwise XOR</span><br>
+x = ~a       <span class="inline-annotate"># Bitwise NOT</span><br>
+x = a << b   <span class="inline-annotate"># Left shift</span><br>
+x = a >> b   <span class="inline-annotate"># Right shift</span><br>
+</li>
+<li><span class="annotate"># Membership Operators:</span>
+<span style="color:#a29696;font-size: 13px;text-align:center;">Membership operators in Python are used to test for the presence of a value within a sequence (like lists, tuples, sets, or strings).Membership operators help validate whether a particular value exists in a collection, making it easy to ensure that data meets certain criteria before proceeding with operations.Here’s a breakdown of how each operator is used:
+<li>
+
+x = a in b      <span class="inline-annotate"># In sequence</span><br>
+x = a not in b  <span class="inline-annotate"># Not in sequence</span><br>
+</li>
+
+<li><span class="annotate"># Identity Operators:</span>
+<span style="color:#a29696;font-size: 13px;text-align:center;">Assignment operators in Python are used to assign values to variables and to perform operations while assigning the result back to the same variable. They make code concise and improve readability when performing operations on variables.Here’s a breakdown of how each operator is used:
+<li>
+
+x = a is b      <span class="inline-annotate"># Same object</span><br>
+x = a is not b  <span class="inline-annotate"># Different object</span><br>
+</li>
+
+<li><span style="color:white;font-size: 13px;font-weight: bold;">1: * Arithmetic Operators *</span>
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 1</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+result = a + 5      <span class="inline-annotate"># Add Integer</span><br>
+print(result)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 2</span><br>
+a = 3.5     <span class="inline-annotate"># Declare Float Variable</span><br>
+b = 2.2     <span class="inline-annotate"># Declare Float Variable</span><br>
+result = a + b     <span class="inline-annotate"># Add Floats</span><br>
+print(result)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 3</span><br>
+x = "Hello"     <span class="inline-annotate"># Declare String Variable</span><br>
+y = " World"    <span class="inline-annotate"># Declare String Variable</span><br>
+result = x + y     <span class="inline-annotate"># Concatenate Strings</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 4</span><br>
+a = [1, 2, 3]     <span class="inline-annotate"># Declare List</span><br>
+b = [4, 5, 6]     <span class="inline-annotate"># Declare List</span><br>
+result = a + b     <span class="inline-annotate"># Concatenate Lists</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 5</span><br>
+a = (7, 8)     <span class="inline-annotate"># Declare Tuple</span><br>
+b = (9, 10)    <span class="inline-annotate"># Declare Tuple</span><br>
+result = a + b     <span class="inline-annotate"># Concatenate Tuples</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 6</span><br>
+num1 = 12     <span class="inline-annotate"># Declare Integer</span><br>
+num2 = 5.5    <span class="inline-annotate"># Declare Float</span><br>
+result = num1 + num2     <span class="inline-annotate"># Add Integer and Float</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 7</span><br>
+a = 2.75     <span class="inline-annotate"># Declare Float</span><br>
+b = 10     <span class="inline-annotate"># Declare Integer</span><br>
+result = a + b     <span class="inline-annotate"># Add Float and Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 8</span><br>
+name = "John"     <span class="inline-annotate"># Declare String Variable</span><br>
+age = 30     <span class="inline-annotate"># Declare Integer</span><br>
+result = name + " is " + str(age)     <span class="inline-annotate"># Concatenate String and Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 9</span><br>
+a = True     <span class="inline-annotate"># Declare Boolean Variable</span><br>
+b = 1     <span class="inline-annotate"># Declare Integer</span><br>
+result = a + b     <span class="inline-annotate"># Add Boolean and Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result (Boolean as Integer 1)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 10</span><br>
+a = 0b1010     <span class="inline-annotate"># Declare Binary Number</span><br>
+b = 5     <span class="inline-annotate"># Declare Integer</span><br>
+result = a + b     <span class="inline-annotate"># Add Binary and Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result (Decimal)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 11</span><br>
+num1 = 0o12     <span class="inline-annotate"># Declare Octal Number</span><br>
+num2 = 5     <span class="inline-annotate"># Declare Integer</span><br>
+result = num1 + num2     <span class="inline-annotate"># Add Octal and Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result (Decimal)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 12</span><br>
+a = 0x1F     <span class="inline-annotate"># Declare Hexadecimal Number</span><br>
+b = 10     <span class="inline-annotate"># Declare Integer</span><br>
+result = a + b     <span class="inline-annotate"># Add Hexadecimal and Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result (Decimal)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 13</span><br>
+list1 = [10] * 3     <span class="inline-annotate"># Repeat List Elements</span><br>
+result = sum(list1)     <span class="inline-annotate"># Sum List Elements</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 14</span><br>
+total = sum(range(1, 11))     <span class="inline-annotate"># Sum of Range (1 to 10)</span><br>
+print(total)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Addition Operators:Example 15</span><br>
+a = {1, 2}     <span class="inline-annotate"># Declare Set</span><br>
+b = {3, 4}     <span class="inline-annotate"># Declare Set</span><br>
+result = a.union(b)     <span class="inline-annotate"># Union of Sets (Addition of Elements)</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 1</span><br>
+a = 15      <span class="inline-annotate"># Declare Integer</span><br>
+result = a - 5      <span class="inline-annotate"># Subtract Integer</span><br>
+print(result)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 2</span><br>
+x = 12.5     <span class="inline-annotate"># Declare Float</span><br>
+y = 2.5     <span class="inline-annotate"># Declare Float</span><br>
+result = x - y     <span class="inline-annotate"># Subtract Floats</span><br>
+print(result)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 3</span><br>
+a = 100     <span class="inline-annotate"># Declare Integer</span><br>
+result = a - 45     <span class="inline-annotate"># Subtract Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 4</span><br>
+a = 7.8     <span class="inline-annotate"># Declare Float</span><br>
+b = 3.2     <span class="inline-annotate"># Declare Float</span><br>
+result = a - b     <span class="inline-annotate"># Subtract Floats</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 5</span><br>
+a = 10     <span class="inline-annotate"># Declare Integer</span><br>
+result = a - 0b101     <span class="inline-annotate"># Subtract Binary</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 6</span><br>
+a = 0xFF     <span class="inline-annotate"># Declare Hexadecimal</span><br>
+b = 5     <span class="inline-annotate"># Declare Integer</span><br>
+result = a - b     <span class="inline-annotate"># Subtract Hexadecimal</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 7</span><br>
+a = 1000     <span class="inline-annotate"># Declare Integer</span><br>
+b = 200     <span class="inline-annotate"># Declare Integer</span><br>
+result = a - b     <span class="inline-annotate"># Subtract Integers</span><br>
+print(result)     <span class="inline-annotate"># Print result</span>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 8</span><br>
+a = 3.14159     <span class="inline-annotate"># Declare Float</span><br>
+b = 1.14159     <span class="inline-annotate"># Declare Float</span><br>
+result = a - b     <span class="inline-annotate"># Subtract Floats</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 9</span><br>
+list1 = [5, 3, 2]     <span class="inline-annotate"># Declare List</span><br>
+result = sum(list1) - 5     <span class="inline-annotate"># Subtract from List Sum</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 10</span><br>
+a = 20     <span class="inline-annotate"># Declare Integer</span><br>
+b = 5.5     <span class="inline-annotate"># Declare Float</span><br>
+result = a - b     <span class="inline-annotate"># Subtract Integer from Float</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 11</span><br>
+a = 100     <span class="inline-annotate"># Declare Integer</span><br>
+result = a - 50 - 25     <span class="inline-annotate"># Multiple Subtraction</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 12</span><br>
+a = 0o12     <span class="inline-annotate"># Declare Octal</span><br>
+b = 3     <span class="inline-annotate"># Declare Integer</span><br>
+result = a - b     <span class="inline-annotate"># Subtract Octal and Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 13</span><br>
+x = 100     <span class="inline-annotate"># Declare Integer</span><br>
+y = 50     <span class="inline-annotate"># Declare Integer</span><br>
+result = x - y     <span class="inline-annotate"># Subtract Integers</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 14</span><br>
+a = 15.75     <span class="inline-annotate"># Declare Float</span><br>
+b = 5     <span class="inline-annotate"># Declare Integer</span><br>
+result = a - b     <span class="inline-annotate"># Subtract Integer from Float</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Subtraction Operator:Example 15</span><br>
+a = 2**4     <span class="inline-annotate"># Declare Exponent</span><br>
+b = 10     <span class="inline-annotate"># Declare Integer</span><br>
+result = a - b     <span class="inline-annotate"># Subtract Exponent Result</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 1</span><br>
+a = 7      <span class="inline-annotate"># Declare Integer</span><br>
+result = a * 5      <span class="inline-annotate"># Multiply by Integer</span><br>
+print(result)      <span class="inline-annotate"># Print result</span><br>
+</li>
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 2</span><br>
+x = 3.5     <span class="inline-annotate"># Declare Float</span><br>
+y = 2     <span class="inline-annotate"># Declare Integer</span><br>
+result = x * y     <span class="inline-annotate"># Multiply Float and Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 3</span><br>
+a = "Hello "     <span class="inline-annotate"># Declare String</span><br>
+result = a * 3     <span class="inline-annotate"># Multiply String</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 4</span><br>
+list1 = [1, 2]     <span class="inline-annotate"># Declare List</span><br>
+result = list1 * 2     <span class="inline-annotate"># Multiply List</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 5</span><br>
+a = 6.75     <span class="inline-annotate"># Declare Float</span><br>
+b = 4     <span class="inline-annotate"># Declare Integer</span><br>
+result = a * b     <span class="inline-annotate"># Multiply Float and Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 6</span><br>
+a = 10     <span class="inline-annotate"># Declare Integer</span><br>
+b = 0b101     <span class="inline-annotate"># Declare Binary</span><br>
+result = a * b     <span class="inline-annotate"># Multiply Integer and Binary</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 7</span><br>
+a = 0xA     <span class="inline-annotate"># Declare Hexadecimal</span><br>
+b = 3     <span class="inline-annotate"># Declare Integer</span><br>
+result = a * b     <span class="inline-annotate"># Multiply Hexadecimal and Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 8</span><br>
+name = "John"     <span class="inline-annotate"># Declare String</span><br>
+result = name * 2     <span class="inline-annotate"># Multiply String</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 9</span><br>
+x = 5.5     <span class="inline-annotate"># Declare Float</span><br>
+y = 4.2     <span class="inline-annotate"># Declare Float</span><br>
+result = x * y     <span class="inline-annotate"># Multiply Floats</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 10</span><br>
+a = 5     <span class="inline-annotate"># Declare Integer</span><br>
+b = 4     <span class="inline-annotate"># Declare Integer</span><br>
+result = a * b     <span class="inline-annotate"># Multiply Integers</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 11</span><br>
+a = 0o7     <span class="inline-annotate"># Declare Octal</span><br>
+b = 5     <span class="inline-annotate"># Declare Integer</span><br>
+result = a * b     <span class="inline-annotate"># Multiply Octal and Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 12</span><br>
+a = 3**2     <span class="inline-annotate"># Declare Exponent</span><br>
+b = 4     <span class="inline-annotate"># Declare Integer</span><br>
+result = a * b     <span class="inline-annotate"># Multiply Exponent Result</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 13</span><br>
+a = 8     <span class="inline-annotate"># Declare Integer</span><br>
+b = -2     <span class="inline-annotate"># Declare Negative Integer</span><br>
+result = a * b     <span class="inline-annotate"># Multiply by Negative Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 14</span><br>
+a = 4.5     <span class="inline-annotate"># Declare Float</span><br>
+b = 2.5     <span class="inline-annotate"># Declare Float</span><br>
+result = a * b     <span class="inline-annotate"># Multiply Floats</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Multiplication Operator:Example 15</span><br>
+a = True     <span class="inline-annotate"># Declare Boolean</span><br>
+b = 5     <span class="inline-annotate"># Declare Integer</span><br>
+result = a * b     <span class="inline-annotate"># Multiply Boolean and Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator:Example 1</span><br>
+a = 20      <span class="inline-annotate"># Declare Integer</span><br>
+result = a / 5      <span class="inline-annotate"># Division by Integer</span><br>
+print(result)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 2</span><br> x = 15.5 <span class="inline-annotate"># Declare Float</span><br> y = 2.5 <span class="inline-annotate"># Declare Float</span><br> result = x / y <span class="inline-annotate"># Divide Floats</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 3</span><br> a = 10 <span class="inline-annotate"># Declare Integer</span><br> result = a / 4 <span class="inline-annotate"># Division by Integer</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 4</span><br> a = 50 <span class="inline-annotate"># Declare Integer</span><br> b = 2 <span class="inline-annotate"># Declare Integer</span><br> result = a / b <span class="inline-annotate"># Divide Integers</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 5</span><br> x = 9 <span class="inline-annotate"># Declare Integer</span><br> result = x / 3 <span class="inline-annotate"># Division by Integer</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 6</span><br> a = 8.0 <span class="inline-annotate"># Declare Float</span><br> b = 2 <span class="inline-annotate"># Declare Integer</span><br> result = a / b <span class="inline-annotate"># Divide Float by Integer</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 7</span><br> x = 100 <span class="inline-annotate"># Declare Integer</span><br> y = 25 <span class="inline-annotate"># Declare Integer</span><br> result = x / y <span class="inline-annotate"># Divide Integers</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 8</span><br> a = 0x10 <span class="inline-annotate"># Declare Hexadecimal</span><br> result = a / 4 <span class="inline-annotate"># Divide Hexadecimal</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 9</span><br> x = 7.5 <span class="inline-annotate"># Declare Float</span><br> result = x / 3 <span class="inline-annotate"># Division by Integer</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 10</span><br> a = 25 <span class="inline-annotate"># Declare Integer</span><br> result = a / 5 <span class="inline-annotate"># Division by Integer</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 11</span><br> a = 0o16 <span class="inline-annotate"># Declare Octal</span><br> b = 2 <span class="inline-annotate"># Declare Integer</span><br> result = a / b <span class="inline-annotate"># Divide Octal and Integer</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 12</span><br> a = 9**2 <span class="inline-annotate"># Declare Exponent</span><br> b = 9 <span class="inline-annotate"># Declare Integer</span><br> result = a / b <span class="inline-annotate"># Divide Exponent Result</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 13</span><br> a = 16 <span class="inline-annotate"># Declare Integer</span><br> b = -4 <span class="inline-annotate"># Declare Negative Integer</span><br> result = a / b <span class="inline-annotate"># Divide by Negative Integer</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 14</span><br> x = 81 <span class="inline-annotate"># Declare Integer</span><br> y = 9 <span class="inline-annotate"># Declare Integer</span><br> result = x / y <span class="inline-annotate"># Divide Integers</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Division Operator: Example 15</span><br> a = 100 <span class="inline-annotate"># Declare Integer</span><br> result = a / True <span class="inline-annotate"># Divide by Boolean</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li>
+
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator:Example 1</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer</span><br>
+result = a % 3      <span class="inline-annotate"># Remainder after Division</span><br>
+print(result)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 2</span><br> x = 25 <span class="inline-annotate"># Declare Integer</span><br> y = 4 <span class="inline-annotate"># Declare Integer</span><br> result = x % y <span class="inline-annotate"># Remainder after Division</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 3</span><br> a = 100 <span class="inline-annotate"># Declare Integer</span><br> result = a % 6 <span class="inline-annotate"># Remainder after Division</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 4</span><br> x = 50.5 <span class="inline-annotate"># Declare Float</span><br> y = 4.2 <span class="inline-annotate"># Declare Float</span><br> result = x % y <span class="inline-annotate"># Remainder after Division</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 5</span><br> a = 0b1101 <span class="inline-annotate"># Declare Binary</span><br> result = a % 5 <span class="inline-annotate"># Remainder with Binary</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 6</span><br> x = 13 <span class="inline-annotate"># Declare Integer</span><br> y = 3 <span class="inline-annotate"># Declare Integer</span><br> result = x % y <span class="inline-annotate"># Remainder after Division</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 7</span><br> a = 144 <span class="inline-annotate"># Declare Integer</span><br> result = a % 12 <span class="inline-annotate"># Remainder after Division</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 8</span><br> a = 7.5 <span class="inline-annotate"># Declare Float</span><br> result = a % 2 <span class="inline-annotate"># Remainder with Float</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 9</span><br> x = 0xA <span class="inline-annotate"># Declare Hexadecimal</span><br> result = x % 4 <span class="inline-annotate"># Remainder with Hexadecimal</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 10</span><br> a = 81 <span class="inline-annotate"># Declare Integer</span><br> result = a % 10 <span class="inline-annotate"># Remainder after Division</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 11</span><br> a = 9**2 <span class="inline-annotate"># Declare Exponent</span><br> b = 10 <span class="inline-annotate"># Declare Integer</span><br> result = a % b <span class="inline-annotate"># Remainder of Exponent Result</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 12</span><br> a = 0o17 <span class="inline-annotate"># Declare Octal</span><br> result = a % 3 <span class="inline-annotate"># Remainder with Octal</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 13</span><br> x = 19 <span class="inline-annotate"># Declare Integer</span><br> y = -5 <span class="inline-annotate"># Declare Negative Integer</span><br> result = x % y <span class="inline-annotate"># Remainder with Negative Integer</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 14</span><br> x = 27 <span class="inline-annotate"># Declare Integer</span><br> y = 8 <span class="inline-annotate"># Declare Integer</span><br> result = x % y <span class="inline-annotate"># Remainder after Division</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li> <li><span style="color:white;font-size: 11px;font-weight: bold;">#Remainder Operator: Example 15</span><br> a = 10 <span class="inline-annotate"># Declare Integer</span><br> result = a % True <span class="inline-annotate"># Remainder with Boolean</span><br> print(result) <span class="inline-annotate"># Print result</span><br> </li>
+
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#PowerOfNumber: Example 1</span><br>
+a = 2      <span class="inline-annotate"># Declare Integer</span><br>
+result = a ** 3      <span class="inline-annotate"># Power of 2 to the power of 3</span><br>
+print(result)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#PowerOfNumber: Example 2</span><br>
+x = 5     <span class="inline-annotate"># Declare Integer</span><br>
+y = 4     <span class="inline-annotate"># Declare Integer</span><br>
+result = x ** y     <span class="inline-annotate"># Power of 5 to the power of 4</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#PowerOfNumber: Example 3</span><br>
+a = 10     <span class="inline-annotate"># Declare Integer</span><br>
+result = a ** 2     <span class="inline-annotate"># Square of 10</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#PowerOfNumber: Example 4</span><br>
+x = 3.5     <span class="inline-annotate"># Declare Float</span><br>
+y = 2     <span class="inline-annotate"># Declare Integer</span><br>
+result = x ** y     <span class="inline-annotate"># Power of Float to Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#PowerOfNumber: Example 5</span><br>
+base = 6     <span class="inline-annotate"># Declare Integer</span><br>
+exp = 3     <span class="inline-annotate"># Declare Exponent</span><br>
+result = base ** exp     <span class="inline-annotate"># Power of base 6 raised to 3</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Floor Division: Example 1</span><br>
+a = 17      <span class="inline-annotate"># Declare Integer</span><br>
+result = a // 3      <span class="inline-annotate"># Floor division of 17 by 3</span><br>
+print(result)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Floor Division: Example 2</span><br>
+x = 28     <span class="inline-annotate"># Declare Integer</span><br>
+y = 5     <span class="inline-annotate"># Declare Integer</span><br>
+result = x // y     <span class="inline-annotate"># Floor division of 28 by 5</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Floor Division: Example 3</span><br>
+a = 10.5     <span class="inline-annotate"># Declare Float</span><br>
+result = a // 2     <span class="inline-annotate"># Floor division of Float by Integer</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Floor Division: Example 4</span><br>
+x = 50     <span class="inline-annotate"># Declare Integer</span><br>
+y = 8     <span class="inline-annotate"># Declare Integer</span><br>
+result = x // y     <span class="inline-annotate"># Floor division of 50 by 8</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;">#Floor Division: Example 5</span><br>
+base = 100     <span class="inline-annotate"># Declare Integer</span><br>
+exp = 6     <span class="inline-annotate"># Declare Integer</span><br>
+result = base // exp     <span class="inline-annotate"># Floor division of 100 by 6</span><br>
+print(result)     <span class="inline-annotate"># Print result</span><br>
+</li>
+
+
+<li><span style="color:white;font-size: 14px;font-weight: bold;">2: * Assignment Operators *</span></li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 1: Assigns Value</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = a      <span class="inline-annotate"># Assigns value of 'a' to 'x'</span><br>
+print(x)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 2: Adds and Assign</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = 5      <span class="inline-annotate"># Assign value to 'x'</span><br>
+x += a      <span class="inline-annotate"># Adds 'a' to 'x' and assigns</span><br>
+print(x)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 3: Subtracts and Assign</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = 20      <span class="inline-annotate"># Assign value to 'x'</span><br>
+x -= a      <span class="inline-annotate"># Subtracts 'a' from 'x' and assigns</span><br>
+print(x)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 4: Multiplies and Assign</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = 3      <span class="inline-annotate"># Assign value to 'x'</span><br>
+x *= a      <span class="inline-annotate"># Multiplies 'x' by 'a' and assigns</span><br>
+print(x)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 5: Divides and Assign</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = 50      <span class="inline-annotate"># Assign value to 'x'</span><br>
+x /= a      <span class="inline-annotate"># Divides 'x' by 'a' and assigns</span><br>
+print(x)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 6: Floor Divides and Assign</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = 55      <span class="inline-annotate"># Assign value to 'x'</span><br>
+x //= a      <span class="inline-annotate"># Floor divides 'x' by 'a' and assigns</span><br>
+print(x)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 7: Modulus and Assign</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = 37      <span class="inline-annotate"># Assign value to 'x'</span><br>
+x %= a      <span class="inline-annotate"># Modulus 'x' by 'a' and assigns</span><br>
+print(x)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 8: Exponent and Assign</span><br>
+a = 2      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = 3      <span class="inline-annotate"># Assign value to 'x'</span><br>
+x **= a      <span class="inline-annotate"># Raises 'x' to the power of 'a' and assigns</span><br>
+print(x)      <span class="inline-annotate"># Print result</span><br>
+</li>
+
+<li><span style="color:white;font-size: 14px;font-weight: bold;">3: * Comparison Operators: *</span></li>
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 1: Equals</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = 10      <span class="inline-annotate"># Assign value to 'x'</span><br>
+result = (x == a)      <span class="inline-annotate"># Check if 'x' equals 'a'</span><br>
+print(result)      <span class="inline-annotate"># Print result (True or False)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 2: Not Equal</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = 5      <span class="inline-annotate"># Assign value to 'x'</span><br>
+result = (x != a)      <span class="inline-annotate"># Check if 'x' is not equal to 'a'</span><br>
+print(result)      <span class="inline-annotate"># Print result (True or False)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 3: Greater Than</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = 15      <span class="inline-annotate"># Assign value to 'x'</span><br>
+result = (x > a)      <span class="inline-annotate"># Check if 'x' is greater than 'a'</span><br>
+print(result)      <span class="inline-annotate"># Print result (True or False)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 4: Less Than</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = 5      <span class="inline-annotate"># Assign value to 'x'</span><br>
+result = (x < a)      <span class="inline-annotate"># Check if 'x' is less than 'a'</span><br>
+print(result)      <span class="inline-annotate"># Print result (True or False)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 5: Greater or Equal</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = 10      <span class="inline-annotate"># Assign value to 'x'</span><br>
+result = (x >= a)      <span class="inline-annotate"># Check if 'x' is greater than or equal to 'a'</span><br>
+print(result)      <span class="inline-annotate"># Print result (True or False)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 6: Less or Equal</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable</span><br>
+x = 10      <span class="inline-annotate"># Assign value to 'x'</span><br>
+result = (x <= a)      <span class="inline-annotate"># Check if 'x' is less than or equal to 'a'</span><br>
+print(result)      <span class="inline-annotate"># Print result (True or False)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 13px;font-weight: bold;">4: * Logical Operators: *</span></li>
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 1: Logical AND</span><br>
+a = True      <span class="inline-annotate"># Declare Boolean Variable</span><br>
+b = False      <span class="inline-annotate"># Declare Boolean Variable</span><br>
+x = a and b      <span class="inline-annotate"># Logical AND: True only if both 'a' and 'b' are True</span><br>
+print(x)      <span class="inline-annotate"># Print result (True or False)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 2: Logical OR</span><br>
+a = True      <span class="inline-annotate"># Declare Boolean Variable</span><br>
+b = False      <span class="inline-annotate"># Declare Boolean Variable</span><br>
+x = a or b      <span class="inline-annotate"># Logical OR: True if either 'a' or 'b' is True</span><br>
+print(x)      <span class="inline-annotate"># Print result (True or False)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 3: Logical NOT</span><br>
+a = True      <span class="inline-annotate"># Declare Boolean Variable</span><br>
+x = not a      <span class="inline-annotate"># Logical NOT: Inverts the truth value of 'a'</span><br>
+print(x)      <span class="inline-annotate"># Print result (True or False)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 13px;font-weight: bold;">5: * Bitwise  Operators: *</span></li>
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 1: Bitwise AND</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable (binary: 1010)</span><br>
+b = 4      <span class="inline-annotate"># Declare Integer Variable (binary: 0100)</span><br>
+x = a & b      <span class="inline-annotate"># Bitwise AND: Performs AND operation between 'a' and 'b'</span><br>
+print(x)      <span class="inline-annotate"># Print result (2 - binary: 0010)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 2: Bitwise OR</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable (binary: 1010)</span><br>
+b = 4      <span class="inline-annotate"># Declare Integer Variable (binary: 0100)</span><br>
+x = a | b      <span class="inline-annotate"># Bitwise OR: Performs OR operation between 'a' and 'b'</span><br>
+print(x)      <span class="inline-annotate"># Print result (14 - binary: 1110)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 3: Bitwise XOR</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable (binary: 1010)</span><br>
+b = 4      <span class="inline-annotate"># Declare Integer Variable (binary: 0100)</span><br>
+x = a ^ b      <span class="inline-annotate"># Bitwise XOR: Performs XOR operation between 'a' and 'b'</span><br>
+print(x)      <span class="inline-annotate"># Print result (14 - binary: 1110)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 4: Bitwise NOT</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable (binary: 1010)</span><br>
+x = ~a      <span class="inline-annotate"># Bitwise NOT: Inverts bits of 'a'</span><br>
+print(x)      <span class="inline-annotate"># Print result (-11)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 5: Left Shift</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable (binary: 1010)</span><br>
+b = 2      <span class="inline-annotate"># Declare Shift Amount</span><br>
+x = a << b      <span class="inline-annotate"># Left shift: Shifts bits of 'a' to the left by 'b'</span><br>
+print(x)      <span class="inline-annotate"># Print result (40 - binary: 101000)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 6: Right Shift</span><br>
+a = 10      <span class="inline-annotate"># Declare Integer Variable (binary: 1010)</span><br>
+b = 2      <span class="inline-annotate"># Declare Shift Amount</span><br>
+x = a >> b      <span class="inline-annotate"># Right shift: Shifts bits of 'a' to the right by 'b'</span><br>
+print(x)      <span class="inline-annotate"># Print result (2 - binary: 10)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 13px;font-weight: bold;">6: * Membership  Operators: *</span></li>
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 1: In Sequence</span><br>
+a = 3      <span class="inline-annotate"># Declare Integer Variable</span><br>
+b = [1, 2, 3, 4, 5]      <span class="inline-annotate"># Declare List</span><br>
+x = a in b      <span class="inline-annotate"># Check if 'a' is in the list 'b'</span><br>
+print(x)      <span class="inline-annotate"># Print result (True or False)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 2: Not In Sequence</span><br>
+a = 6      <span class="inline-annotate"># Declare Integer Variable</span><br>
+b = [1, 2, 3, 4, 5]      <span class="inline-annotate"># Declare List</span><br>
+x = a not in b      <span class="inline-annotate"># Check if 'a' is not in the list 'b'</span><br>
+print(x)      <span class="inline-annotate"># Print result (True or False)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 13px;font-weight: bold;">7: * Identity  Operators: *</span></li>
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 1: Same Object</span><br>
+a = [1, 2, 3]      <span class="inline-annotate"># Declare List</span><br>
+b = a      <span class="inline-annotate"># Assign 'b' to the same object as 'a'</span><br>
+x = a is b      <span class="inline-annotate"># Check if 'a' and 'b' refer to the same object</span><br>
+print(x)      <span class="inline-annotate"># Print result (True or False)</span><br>
+</li>
+
+<li><span style="color:white;font-size: 11px;font-weight: bold;"># Example 2: Different Object</span><br>
+a = [1, 2, 3]      <span class="inline-annotate"># Declare List</span><br>
+b = [1, 2, 3]      <span class="inline-annotate"># Declare another list with the same values</span><br>
+x = a is not b      <span class="inline-annotate"># Check if 'a' and 'b' refer to different objects</span><br>
+print(x)      <span class="inline-annotate"># Print result (True or False)</span><br>
+</li>
+
+
+</li>
+
+</ul>
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Test Your Skills:Operators<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu"style="margin-left:1%;width:98%;padding-left: 0px;padding-right: 0px;margin-right:-3%; background: #000;overflow:hidden;">
+      
+  
+
+
+
+ <iframe src="testquizoperators.html"style="border-bottom-left-radius:0px;border-bottom-right-radius:0px;height:390px;top:0%;border:none; width:100%;overflow-x:hidden;overflow-y:auto;scrollbar-width: none;margin-left:0%;justify-content: center;"></iframe>
+<iframe src="minicompiler/index.html"scrolling="no"style="border-top-left-radius:0px;border-top-right-radius:0px;height:250px;top:0%; width:100%;overflow-x:hidden;overflow-y:hidden;scrollbar-width: none;margin-left:0%;justify-content: center;background:#000;border:none;border-bottom: 0.1px dashed #171616;"></iframe>
+</span></li>
+</li></ul>
+  </li>
+
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Selection: if, elif, else...<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+<li>if numberOfLives == 0:<br>
+&nbsp;&nbsp;&nbsp;print("Game Over!")
+</li><li>if numberOfLives == 0 or timer&lt;=0:<br>
+&nbsp;&nbsp;&nbsp;print("Game Over!")<br>  
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Carry on playing!")
+</li><li>if number &lt; 0:<br>
+&nbsp;&nbsp;&nbsp;print("Negative Number")<br>
+elif number == 0:<br>
+&nbsp;&nbsp;&nbsp;print("Zero")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Positive Number")
+</li><li>if number == 7:<br>
+&nbsp;&nbsp;&nbsp;print("Seven")<br>
+elif number == 8:<br>
+&nbsp;&nbsp;&nbsp;print("Eight")<br>
+elif number == 9:<br>
+&nbsp;&nbsp;&nbsp;print("Nine")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Not seven, eight or nine")</li>
+    </ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Iteration: for loops &amp; While loops<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+    <li>
+      <span class="annotate"># For loop to count from 1 to 10</span>      
+for i in range(1,11):<br>
+&nbsp;&nbsp;&nbsp;print(i)
+    </li><li>  
+      <span class="annotate"># For loop to count in 5 from 0 to 100</span>
+      for i in range(0,101,5):<br>
+&nbsp;&nbsp;&nbsp;print(i)
+    </li><li>
+      <span class="annotate"># For loop to count down from 10 to 1 using a negative step</span>      
+for i in range(10,0,-1):<br>
+&nbsp;&nbsp;&nbsp;print(i)
+    </li><li>
+      <span class="annotate"># Iterate through all the values of a list</span>
+days = ["Mon", "Tue", "Wed", "Thu", "Fri"]<br>
+for i in range(0,len(days)):<br>
+&nbsp;&nbsp;&nbsp;print(days[i])
+    </li><li>
+      <span class="annotate"># Iterate through all the values of a list - Alternative approach</span>
+for day in days:<br>
+&nbsp;&nbsp;&nbsp;print(day)
+    </li><li>
+      <span class="annotate"># Iterate through all the chracters of a string string</span>
+string = "Hello World"<br>
+for character in string:<br>
+&nbsp;&nbsp;&nbsp;print(character)
+   </li><li>
+   <span class="annotate"># Using a while loop</span>   
+i=0<br>
+while i&lt;=100:<br>
+&nbsp;&nbsp;&nbsp;print(i)<br>
+&nbsp;&nbsp;&nbsp;i = i + 1
+</li><li><span class="annotate"># To exit from/break a loop at any time:</span>
+while True:<br>
+&nbsp;&nbsp;&nbsp;# ...<br>      
+    &nbsp;&nbsp;&nbsp;if timer==0:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break
+</li>
+</ul>
+  </li>
+   
+   <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Functions<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+      <li><span class="annotate"># Define a new procedure</span>def displayBanner(message):<br>
+&nbsp;&nbsp;&nbsp;print("---------------")<br>
+&nbsp;&nbsp;&nbsp;print(message)<br>
+&nbsp;&nbsp;&nbsp;print("---------------")<br>
+<br>
+<span class="annotate"># Procedure call</span>
+displayBanner("Hello World!")</li>
+<li><span class="annotate"># Define a new function</span>def add(x, y):<br>
+&nbsp;&nbsp;&nbsp;sum = x + y<br>
+&nbsp;&nbsp;&nbsp;return sum<br>
+<br>
+<span class="annotate"># Function call</span>
+total = add(1,3)
+<br>print(total)  <span class="inline-annotate"># this would display 4</span>
+      </li> 
+     </ul>
+  </li>   
+   <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>String Manipulation<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+    <li>
+      <span class="annotate"># String Concatenation</span>
+firstname = "James"<br>
+lastname = "Bond"<br>
+greeting = "Hello " + firstname + " " + lastname<br> 
+print(greeting)</li>
+<li>
+      <span class="annotate"># Casting a number into a String</span>
+number = 7<br>
+print("Your lucky number is " + str(number))
+</li>
+
+<li>
+<span class="annotate"># Changing the case of a string</span>
+name = "james BOND"<br>
+uppercase = name.upper()<span class="inline-annotate"> # JAMES BOND</span><br>
+lowercase = name.lower()<span class="inline-annotate"> # james bond</span><br>
+titlecase = name.title()<span class="inline-annotate"> # James Bond</span><br>
+   </li>
+<li>
+<span class="annotate"># Retrieving the number of characters in a string</span>
+password = "Pa55w0rd"<br>
+passwordLength = len(password)<span class="inline-annotate"> # 8</span><br>
+   </li>
+<li>
+<span class="annotate"># String Slicing: Extracting characters from a string</span>	
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"<br>
+print("The fifth letter of the alphabet is: " + alphabet[4])<br>
+print("The first 5 letters of the alphabet are: " + alphabet[:5])<br>
+print("The next 5 letters of the alphabet are: " + alphabet[5:10])<br>
+print("The last 5 letters of the alphabet are: " + alphabet[-5:])
+  </li> 
+<li>
+      <span class="annotate"># Iterate through all the chracters of a string</span>
+string = "Hello World"<br>
+for character in string:<br>
+&nbsp;&nbsp;&nbsp;print(character)
+   </li>     </ul>
+  </li> 
+   <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Random Library<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+    <li>
+      <span class="annotate"># Import the random library</span>
+import random<br>
+      </li><li>  
+      <span class="annotate"># Generate a random number between 1 and 100</span>
+randomNumber = random.randint(1,100)
+      </li><li>
+      <span class="annotate"># Pick a value in a list at random</span>
+names = ["Fred","Ali","Ines"]<br>
+      randomName = random.choice(names)</li><li>  
+      <span class="annotate"># Use ASCII codes to generate a random letter between A and Z</span>
+randomLetter = chr(random.randint(65,90))
+      </li>
+     </ul>
+  </li> 
+      <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Data Structures: Lists, Tuples and Dictionaries<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu"><li>
+<span class="annotate"># Declaring a list and accessing its values</span>
+days = ["Mon","Tue","Wed","Thu","Fri","Sat"]<br>
+days.append("Sun")<br>
+print(days[0])      <span class="inline-annotate"># "Mon"</span><br>
+print(days[1])      <span class="inline-annotate"># "Tue"</span><br>
+print(days[2])      <span class="inline-annotate"># "Wed</span><br>
+…<br>
+print(days[6])      <span class="inline-annotate"># "Sun"</span>
+</li><li>
+<span class="annotate"># Finding out the number of items in a list (length of a list)</span>
+print(len(days)) <span class="inline-annotate"># 7</span>
+</li><li>
+<span class="annotate"># Iterate through all the values of a list</span>
+for i in range(0,len(days)):<br>
+&nbsp;&nbsp;&nbsp;print(days[i])
+</li><li>
+<span class="annotate"># Iterate through all the values of a list - Alternative method</span>
+for value in days:<br>
+&nbsp;&nbsp;&nbsp;print(value)
+      </li>
+<li>
+<span class="annotate"># Iterate through all the values of a list - Alternative method</span>
+for value in days:<br>
+&nbsp;&nbsp;&nbsp;print(value)
+      </li>	  
+<li>
+<span class="annotate"># Adding a new value at the end of a list</span>
+numbers = [1,3,5]<br>
+numbers.append(7)
+</li>
+<li>
+<span class="annotate"># Removing a value from a list</span>
+days = ["Mon","Tue","Wed","Thu","Fri"]<br>
+numbers.remove("Wed")
+</li>
+<li>
+<span class="annotate"># Removing a value from a list at a given position</span>
+days = ["Mon","Tue","Wed","Thu","Fri"]<br>
+numbers.pop(2) <span class="inline-annotate"># remove the third item from this list: "Wed"</span><br>
+</li>
+<li>
+<span class="annotate"># Declaring a tuple</span>
+magenta = (255,0,255)<br>
+print("R: " + str(magenta[0]))<br>
+print("G: " + str(magenta[1]))<br>
+print("B: " + str(magenta[2]))
+</li>
+<li>
+<span class="annotate"># Using a Dictionary (Hash table)</span>
+dictionary = {"One":"Un", "Two":"Deux", "Three":"Trois"}<br>
+print("One in French is " + dictionary["One"])</li>
+
+<li>
+<span class="annotate"># Adding an extra key to a dictionary</span>
+dictionary["Four"] = "Quatre" 
+</li>
+</ul>
+  </li>
+      <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>File Handling<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+ <li>
+<span class="annotate"># Reading a text file, line by line</span>
+file = open("myTextFile.txt","r")<br>
+for line in file:<br>
+&nbsp;&nbsp;&nbsp;print(line)<br>
+file.close()
+</li> 
+<li>
+<span class="annotate"># Reading and extracting data from a CSV file, line by line</span>
+file = open("myTextFile.txt","r")<br>
+for line in file:<br>
+&nbsp;&nbsp;&nbsp;data = line.split(",")<br>
+&nbsp;&nbsp;&nbsp;print(data[0] + " - " + data[1] + " - " + data[2])<br>
+file.close()
+</li> 
+ 
+<li>
+<span class="annotate"># Overwriting the content of a text file</span>
+file = open("myTextFile.txt","w")<br>
+file.write("Hello World\n")<br>
+file.close()
+</li> 
+<li>
+<span class="annotate"># Appending data at the end of a text file</span>
+file = open("myTextFile.txt","a")<br>
+file.write("Hello World\n")<br>
+file.close()
+</li> 
+     </ul>
+  </li>
+   
+      <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Input Validation<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+<li>
+<span class="annotate"># Input Validation: Presence Check</span>
+name = input("Enter your name:")<br>
+if name=="":<br>
+&nbsp;&nbsp;&nbsp;print("Empty name!")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Thank you!")
+</li> 
+<li>
+<span class="annotate"># Input Validation: Type Check – Integer?</span>
+number = input("Type a number:")<br>
+if number.isdigit():<br>
+&nbsp;&nbsp;&nbsp;print("This is a number")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("This is not a whole number")
+</li> 
+<li>
+<span class="annotate"># Input Validation: Range Check</span>
+number = int(input("Type a number between 1 and 5:"))<br>
+if number&gt;=1 and number&lt;=5:<br>
+&nbsp;&nbsp;&nbsp;print("Valid number")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Invalid number")
+</li> 
+<li>
+<span class="annotate"># Input Validation: Lookup Check</span>
+drive = input("Can you drive?").lower()<br>
+if drive in ["yes","no"]:<br>
+&nbsp;&nbsp;&nbsp;print("Valid answer")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Invalid answer")
+</li> 
+<li>
+<span class="annotate"># Input Validation: Character Check</span>
+email = input("Type your e-mail address:")<br>
+if "@" in email:<br>
+&nbsp;&nbsp;&nbsp;print("Valid e-mail address")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Invalid e-mail address")
+</li> 
+<li>
+<span class="annotate"># Input Validation: Length Check</span>
+password = input("Type a password:")<br>
+if len(password)&gt;=8:<br>
+&nbsp;&nbsp;&nbsp;print("Valid password")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Invalid password")
+</li> 
+<li>
+<span class="annotate"># Try Again! Using a While Loop:</span>
+name = input("Enter your name:")<br>
+while name=="":<br>
+&nbsp;&nbsp;&nbsp;print("You must enter your name! Please try again!")<br>
+&nbsp;&nbsp;&nbsp;name = input("Enter your name:")<br>
+print("Welcome " +  name)
+</li>
+</ul>
+</li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Intro<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ 
+
+
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">5: * Example: Print numbers *</span></li>
+<li><span class="annotate"># Print an integer</span>print(100)</li>
+<li><span class="annotate"># Print a float</span>print(3.14)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">6: * Example: Concatenate strings *</span></li>
+<li><span class="annotate"># Declare string variables</span>greeting = "Hello"</li>
+<li><span class="annotate"># Declare another string variable</span>name = "Charlie"</li>
+<li><span class="annotate"># Concatenate and print</span>print(greeting + ", " + name + "!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">7: * Example: Print escape characters *</span></li>
+<li><span class="annotate"># Print with new line</span>print("Hello\nWorld")</li>
+<li><span class="annotate"># Print with tab space</span>print("Hello\tWorld")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">8: * Example: Print a list *</span></li>
+<li><span class="annotate"># Declare a list</span>fruits = ["apple", "banana", "cherry"]</li>
+<li><span class="annotate"># Print the list</span>print(fruits)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">9: * Example: Suppress newline in print *</span></li>
+<li><span class="annotate"># Print without new line</span>print("Hello", end=" ")</li>
+<li><span class="annotate"># Continue on the same line</span>print("World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">10: * Example: Print a formatted float *</span></li>
+<li><span class="annotate"># Print a formatted float with 2 decimal places</span>print(f"Pi is approximately: {3.14159:.2f}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">11: * Example: Print with padding *</span></li>
+<li><span class="annotate"># Print with padding</span>print(f"Number: {7:03}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">12: * Example: Print left-aligned text *</span></li>
+<li><span class="annotate"># Print left-aligned text</span>print(f"{'Hello':<10} World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">13: * Example: Print right-aligned text *</span></li>
+<li><span class="annotate"># Print right-aligned text</span>print(f"{'Hello':>10} World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">14: * Example: Print centered text *</span></li>
+<li><span class="annotate"># Print centered text</span>print(f"{'Hello':^10} World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">15: * Example: Print with string interpolation *</span></li>
+<li><span class="annotate"># String interpolation in print</span>name = "Alice"</li>
+<li><span class="annotate"># Print interpolated string</span>print(f"Hello, {name}!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">16: * Example: Print a complex number *</span></li>
+<li><span class="annotate"># Print a complex number</span>print(3 + 5j)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">17: * Example: Print boolean expressions *</span></li>
+<li><span class="annotate"># Print a boolean expression</span>print(5 > 3)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">18: * Example: Print file content *</span></li>
+<li><span class="annotate"># Print content of a file</span>with open('example.txt', 'r') as file:</li>
+<li><span class="annotate"></span>    print(file.read())</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">19: * Example: Print with a loop *</span></li>
+<li><span class="annotate"># Print numbers using a loop</span>for i in range(5):</li>
+<li><span class="annotate"></span>    print(i)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">20: * Example: Print exception handling *</span></li>
+<li><span class="annotate"># Print an error message in exception handling</span>try:</li>
+<li><span class="annotate"></span>    result = 10 / 0</li>
+<li><span class="annotate">except ZeroDivisionError:</span></li>
+<li><span class="annotate"></span>    print("Error: Division by zero!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">21: * Example: Print list comprehension *</span></li>
+<li><span class="annotate"># Print list comprehension result</span>numbers = [x**2 for x in range(5)]</li>
+<li><span class="annotate"></span>print(numbers)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">22: * Example: Print date and time *</span></li>
+<li><span class="annotate"># Print the current date and time</span>import datetime</li>
+<li><span class="annotate">print(datetime.datetime.now())</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">23: * Example: Print memory address of a variable *</span></li>
+<li><span class="annotate"># Print memory address of a variable</span>x = 10</li>
+<li><span class="annotate">print(hex(id(x)))</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">24: * Example: Print formatted dictionary *</span></li>
+<li><span class="annotate"># Print formatted dictionary</span>my_dict = {"name": "John", "age": 30}</li>
+<li><span class="annotate">print(f"Name: {my_dict['name']}, Age: {my_dict['age']}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">25: * Example: Print after importing a module *</span></li>
+<li><span class="annotate"># Import math module and print a value</span>import math</li>
+<li><span class="annotate">print(math.pi)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">26: * Example: Print bytes *</span></li>
+<li><span class="annotate"># Print a byte object</span>byte_data = b"Hello"</li>
+<li><span class="annotate">print(byte_data)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">27: * Example: Print list elements on separate lines *</span></li>
+<li><span class="annotate"># Print each element of a list on a new line</span>fruits = ["apple", "banana", "cherry"]</li>
+<li><span class="annotate">for fruit in fruits:</span></li>
+<li><span class="annotate"></span>    print(fruit)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">28: * Example: Print with keyword arguments *</span></li>
+<li><span class="annotate"># Print using keyword arguments</span>print("Hello", "World", sep="-", end="!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">29: * Example: Print a tuple *</span></li>
+<li><span class="annotate"># Print a tuple</span>my_tuple = (1, 2, 3)</li>
+<li><span class="annotate">print(my_tuple)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">30: * Example: Print set elements *</span></li>
+<li><span class="annotate"># Print elements of a set</span>my_set = {1, 2, 3}</li>
+<li><span class="annotate">print(my_set)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">31: * Example: Print None type *</span></li>
+<li><span class="annotate"># Print a None value</span>x = None</li>
+<li><span class="annotate">print(x)</li>   
+</ul>
+  </li>
+
+  
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Syntax: print()<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Comments<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Variables<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Numbers<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Casting<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Strings<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Booleans<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Operators<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Lists<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Tuples<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Sets<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Dictionaries<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python If...Else<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python While Loops<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python For Loops<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Functions<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Lambda<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Arrays<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Classes/Objects<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Inheritance<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Iterators<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Modules:NumPy<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Modules:Panda<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Machine Learning<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+<div class="link">OOP<span class="chevron material-symbols-outlined"><<img src="python-101.png" width="17" align="absmiddle">></span></div>
+<ul class="submenu">
+    <li>import random<br><br>
+<span class="annotate"># Defining a Dice class</span>	
+class Dice():
+<span class="annotate">&nbsp;&nbsp;&nbsp;# Constructor for the Dice class</span>
+&nbsp;&nbsp;&nbsp;def __init__(self,numberOfSides=6):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.numberOfSides = numberOfSides<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.value = 1<br><br>
+&nbsp;&nbsp;&nbsp;def throw(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.value = random.randint(1,self.numberOfSides)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.value<br><br>
+<span class="annotate"># Instantiating a dice object using the Dice class</span>   
+dice = Dice(6)<br>
+dice.throw()<br>
+print(dice.value)
+</li>
+</ul>
+</li>
+
+</ul>
+ </div>
+  </div>
+<div class="side-panel">
+<div id="help"style="overflow-y:hidden;scrollbar-width:none;"> <div id="topbar" class="prevent-select"style="overflow-y:hidden;scrollbar-width:none;border-radius:0px;background: #0F192A;">
+ 
+</div>
+
+
+</div>
+
+</div>
+<textarea id="interactive" style="display: none;"></textarea>
+<script src="jquery.min.js.download"></script>
+<script src="skulpt.min.js.download"></script>
+<script src="skulpt-stdlib.js.download"></script>
+<script src="codemirrorepl.js.download"></script>
+<script src="python.js.download"></script>
+<script>
+var theme="midnight";
+</script>
+<script src="script.js.download"></script>
+<script src="codemirror.js.download"></script>
+<script src="addons.js.download"></script>
+<script>new Tab("#tab");
+
+ $("#newWindow").click(function (e) {
+   window.open("index.php?theme="+theme, '_blank', 'width=' + screen.width + ', height=' + screen.height + ',top=0,left=0,toolbar=no,scrollbars=yes,status=no,menubar=no,fullscreen=yes');
+  } ); 
+   
+</script>
+	
+<script>
+ window.onbeforeunload = function (e) {
+    e = e || window.event;
+
+    // For IE and Firefox prior to version 4
+    if (e) {
+        e.returnValue = 'By exiting this window you will lose all changes you have made to your code. Are you sure you want to exit this window?';
+    }
+
+    // For Safari
+    return 'By exiting this window you will lose all changes you have made to your code. Are you sure you want to exit this window?';
+};
+$("#resetBtn").click(function (e) {
+location.reload();
+});
+
+$(function() {
+	var Accordion = function(el, multiple) {
+		this.el = el || {};
+		this.multiple = multiple || false;
+
+		// Variables privadas
+		var links = this.el.find('.link');
+		// Evento
+		links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+	}
+
+	Accordion.prototype.dropdown = function(e) {
+		var $el = e.data.el;
+			$this = $(this),
+			$next = $this.next();
+
+		$next.slideToggle();
+		$this.parent().toggleClass('open');
+
+		if (!e.data.multiple) {
+			$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+		};
+	}	
+
+	var accordion = new Accordion($('#accordion'), false);
+});
+
+
+document.querySelector(".side-panel-toggle").addEventListener("click", () => {
+  document.querySelector(".wrapper").classList.toggle("side-panel-open");
+});
+ 
+</script>
+
+
+<span id="PING_CONTENT_DLS_POPUP" style="display: none;"></span><div style="background-color: transparent; border: none; bottom: 15px; display: block; margin: 0px; opacity: 1; padding: 0px; position: fixed; right: 15px; z-index: 2147483647;"><template shadowrootmode="closed"><style>/*!
+
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&display=swap);
+*{border:0;box-sizing:border-box;font:inherit;font-family:"mcafeeOpenSans","Poppins",Helvetica,Arial,Arial,Helvetica,sans-serif;font-size:100%;margin:0;padding:0;vertical-align:baseline;outline:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html,body{background-color:#f5f6fa;font-family:"Poppins",Helvetica,Arial,"mcafeeOpenSans",Arial,Helvetica,sans-serif;line-height:1;height:100%;width:100%}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}b{font-weight:bold}img{display:block}.dls__container{align-items:center;display:flex;margin:0 auto;margin-top:50px;position:relative}.dls__popup__expanded{align-items:center;overflow:hidden;border-radius:100px;cursor:pointer;display:flex;left:0;padding:15px;position:absolute;height:95px;width:383px;background-color:#fff;transition:all .3s ease-in-out}.dls__popup__expanded .dls__icon{height:65px;width:73px}.content{margin-left:12px}.content .content__images{display:flex;align-items:center;width:250px}.content .content__images .seperator__line{margin-left:5px;margin-right:10px}.content .content__images #dls_close_icon{cursor:pointer;margin-left:auto;margin-right:0px}.content p{font-family:"Poppins",Arial,Helvetica,sans-serif;font-weight:"400";font-size:14px;line-height:20px;margin-top:8px;color:#4258ff;width:250px;cursor:pointer}.shield{overflow:hidden;box-shadow:0px 2px 4px 0px rgba(33,41,52,.12),0px -1px 2px 0px rgba(0,0,0,.08);align-items:center;border-radius:100px;bottom:0;display:flex;height:95px;justify-content:center;position:absolute;right:0;width:383px;transition:all .3s ease-in-out}.shield__circle{display:flex;justify-content:center;align-items:center;width:55px;height:55px;background-color:#c01818;transition:all .6s ease-in-out .2s;z-index:1;opacity:0}
+
+/*# sourceMappingURL=../sourceMap/chrome/css/download_scan_popup.css.map*/</style><div class="dls__container">
+  <div class="shield" style="background: transparent; opacity: 0.1; display: none;">
+    <div class="shield__circle" style="opacity: 1;">
+      <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/mcafee_logo_white.svg?secret=lqli7s" x-mcsrc="" id="dls_ballon_icon" x-mcsrcparsed="true">
+    </div>
+    <div class="dls__popup__expanded" style="opacity: 0;">
+      <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/download_scan_icon.svg?secret=lqli7s" x-mcsrc="" class="dls__icon" x-mcsrcparsed="true">
+      <div class="content">
+        <div class="content__images">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/mcafee_logo_red.svg?secret=lqli7s" x-mcsrc="" id="dls_mcafee_logo" x-mcsrcparsed="true">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/seperator_line.svg?secret=lqli7s" x-mcsrc="" class="seperator__line" x-mcsrcparsed="true">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/webadvisor.svg?secret=lqli7s" x-mcsrc="" x-mcsrcparsed="true">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/close-outline.svg?secret=lqli7s" x-mcsrc="" id="dls_close_icon" x-mcsrcparsed="true">
+        </div>
+        <p id="download_scan_popup_expanded_descriptions">Your download's being scanned. We'll let you know if there's an issue.</p>
+      </div>
+    </div>
+  </div>
+</div><style>
+
+.mc-interactive-balloon{position:absolute;right:-50px;bottom:8px;box-shadow:rgba(0,0,0,.12) 0px 0px 10px;height:40px;width:40px;background:#1671ee;border-radius:20px;display:flex;justify-content:center;align-items:center}
+
+/*# sourceMappingURL=../sourceMap/chrome/css/interactive_balloon.css.map*/</style></template></div></body></html>
