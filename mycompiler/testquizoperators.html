@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Syntax Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ccc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .quiz-container {
+            background: #ccc;
+            padding: 5px;
+            border-radius: 0px;
+            text-align: center;
+            width: 400px;
+
+
+        }
+
+        h1 {
+    color: #333;
+font-size: 17px;
+}
+
+
+        #question {
+            margin-left: 11px;
+            font-size: 13px;
+            color: #333;
+text-align:left;
+
+
+        }
+
+        .options {
+            margin-bottom: 10px;
+        }
+
+        .option {
+            display: block;
+           background: #0F192A;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .option:hover {
+            background: #0056b3;
+        }
+
+        #next-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #next-btn:disabled {
+            background-color: #ccc;
+        }
+
+        #feedback-modal {
+            display: none;
+            position: fixed;
+            top: 87%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ccc;
+            padding: 5px;
+            border-radius: 15px;
+width:180px;
+height:70px;
+text-align:center;
+           box-shadow:  -5px -5px 10px #000,
+             5px 5px 10px #000;
+        }
+
+        #feedback-modal h2 {
+            font-size: 12px;
+            margin-bottom: 0px;
+
+        }
+
+        #close-feedback {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #score-container {
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+                <div id="question-container">
+            <h2 id="question">Question text</h2>
+            <div class="options">
+                <button class="option" onclick="selectAnswer(0)">Option 1</button>
+                <button class="option" onclick="selectAnswer(1)">Option 2</button>
+                <button class="option" onclick="selectAnswer(2)">Option 3</button>
+                <button class="option" onclick="selectAnswer(3)">Option 4</button>
+            </div>
+        </div>
+        <button id="next-btn" onclick="nextQuestion()">NEXT</button>
+        <div id="score-container" class="hidden">
+            <h2>Your Score: <span id="score"></span>/30</h2>
+            <button onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="feedback-modal">
+        <h2 id="feedback-message"></h2>
+        <button id="close-feedback" onclick="closeFeedback()">OK</button>
+    </div>
+
+        <script>
+        const questions = [
+    {
+        question: "1. What will be the output of the following code?\n<pre><code>print(10 + 5)</code></pre>",
+        options: ["15", "105", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "2. Which of the following is the correct way to assign a value to a variable?",
+        options: ["x == 5", "x = 5", "x := 5", "var x = 5"],
+        correct: 1
+    },
+    {
+        question: "3. What is the output of the following code?\n<pre><code>print(5 * 2)</code></pre>",
+        options: ["10", "52", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "4. What will the following expression evaluate to?\n<pre><code>10 > 5</code></pre>",
+        options: ["True", "False", "None", "Error"],
+        correct: 0
+    },
+    {
+        question: "5. What is the output of this code?\n<pre><code>x = 3\nx += 2\nprint(x)</code></pre>",
+        options: ["3", "2", "5", "None of the above"],
+        correct: 2
+    },
+    {
+        question: "6. What will be printed by the following code?\n<pre><code>print(10 - 3)</code></pre>",
+        options: ["7", "13", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "7. Which operator is used for equality comparison in Python?",
+        options: ["=", "==", "===", "!"],
+        correct: 1
+    },
+    {
+        question: "8. What is the result of this expression?\n<pre><code>10 <= 20</code></pre>",
+        options: ["True", "False", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "9. What will the following code output?\n<pre><code>print(15 / 3)</code></pre>",
+        options: ["5.0", "5", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "10. What does the following code output?\n<pre><code>print(2 ** 3)</code></pre>",
+        options: ["6", "8", "Error", "None of the above"],
+        correct: 1
+    },
+    {
+        question: "11. Which operator is used for logical AND in Python?",
+        options: ["&", "&&", "and", "None of the above"],
+        correct: 2
+    },
+    {
+        question: "12. What is the output of this expression?\n<pre><code>print(True or False)</code></pre>",
+        options: ["True", "False", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "13. Which operator is used for logical NOT in Python?",
+        options: ["!", "~", "not", "None of the above"],
+        correct: 2
+    },
+    {
+        question: "14. What is the result of this expression?\n<pre><code>print(4 % 2)</code></pre>",
+        options: ["0", "1", "2", "Error"],
+        correct: 0
+    },
+    {
+        question: "15. What will the following code output?\n<pre><code>print(7 // 2)</code></pre>",
+        options: ["3", "3.5", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "16. What does the following code evaluate to?\n<pre><code>not (5 > 2)</code></pre>",
+        options: ["True", "False", "None", "Error"],
+        correct: 1
+    },
+    {
+        question: "17. Which of the following is a comparison operator in Python?",
+        options: ["=", "==", "+", "*"],
+        correct: 1
+    },
+    {
+        question: "18. What will the following code return?\n<pre><code>print(5 != 5)</code></pre>",
+        options: ["True", "False", "Error", "None of the above"],
+        correct: 1
+    },
+    {
+        question: "19. What is the output of this expression?\n<pre><code>print(3 ** 2 == 9)</code></pre>",
+        options: ["True", "False", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "20. What will the following code print?\n<pre><code>x = 5\nprint(x > 3 and x < 10)</code></pre>",
+        options: ["True", "False", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "21. What is the output of this code?\n<pre><code>print(3 + 2 * 2)</code></pre>",
+        options: ["7", "10", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "22. What does this expression return?\n<pre><code>print(5 == 5.0)</code></pre>",
+        options: ["True", "False", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "23. What is the result of the following code?\n<pre><code>print(8 % 3 == 2)</code></pre>",
+        options: ["True", "False", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "24. What will the following code output?\n<pre><code>print(not (4 < 2))</code></pre>",
+        options: ["True", "False", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "25. Which operator is used to add two numbers in Python?",
+        options: ["+", "-", "*", "/"],
+        correct: 0
+    },
+    {
+        question: "26. What will the following expression return?\n<pre><code>print(5 >= 5)</code></pre>",
+        options: ["True", "False", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "27. What is the result of the following code?\n<pre><code>print(6 // 2)</code></pre>",
+        options: ["3", "3.0", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "28. Which of the following is the result of this expression?\n<pre><code>print(10 * 2 / 5)</code></pre>",
+        options: ["4.0", "20", "Error", "None of the above"],
+        correct: 0
+    },
+    {
+        question: "29. What will the following code return?\n<pre><code>print(True and False)</code></pre>",
+        options: ["True", "False", "Error", "None of the above"],
+        correct: 1
+    },
+    {
+        question: "30. What is the output of this code?\n<pre><code>print((10 - 2) * 3)</code></pre>",
+        options: ["24", "8", "30", "Error"],
+        correct: 0
+    }
+];
+
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const optionsElements = document.getElementsByClassName('option');
+
+            questionElement.innerHTML = questions[currentQuestionIndex].question;
+            for (let i = 0; i < 4; i++) {
+                optionsElements[i].textContent = questions[currentQuestionIndex].options[i];
+            }
+
+            document.getElementById('feedback-modal').style.display = 'none';
+        }
+
+        function selectAnswer(index) {
+            const correctAnswer = questions[currentQuestionIndex].correct;
+            const feedbackMessage = document.getElementById('feedback-message');
+
+            if (index === correctAnswer) {
+                feedbackMessage.textContent = 'Correct!';
+                feedbackMessage.style.color = 'green';
+                score++;
+            } else {
+                feedbackMessage.textContent = `Wrong! The correct answer is: ${questions[currentQuestionIndex].options[correctAnswer]}`;
+                feedbackMessage.style.color = 'red';
+            }
+
+            document.getElementById('feedback-modal').style.display = 'block';
+            document.getElementById('next-btn').disabled = false;
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+                document.getElementById('next-btn').disabled = true;
+            } else {
+                endQuiz();
+            }
+        }
+
+        function endQuiz() {
+            document.getElementById('question-container').classList.add('hidden');
+            document.getElementById('next-btn').classList.add('hidden');
+            document.getElementById('score-container').classList.remove('hidden');
+
+            const scoreElement = document.getElementById('score');
+            scoreElement.textContent = score;
+        }
+
+        function restartQuiz() {
+            score = 0;
+            currentQuestionIndex = 0;
+            document.getElementById('question-container').classList.remove('hidden');
+            document.getElementById('next-btn').classList.remove('hidden');
+            document.getElementById('score-container').classList.add('hidden');
+            showQuestion();
+            document.getElementById('next-btn').disabled = true;
+        }
+
+        function closeFeedback() {
+            document.getElementById('feedback-modal').style.display = 'none';
+        }
+
+        window.onload = function() {
+            showQuestion();
+            document.getElementById('next-btn').disabled = true;
+        };
+    </script>
+</body>
+</html>
