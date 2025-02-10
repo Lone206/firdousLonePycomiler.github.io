@@ -1,0 +1,610 @@
+function openfile101(filename,mode) {
+	if (mode=="w") {
+		var tabs = document.querySelectorAll(".tabbox li");
+	
+		for (var i = 0; i < tabs.length; i++) {
+		tabName = tabs[i].getElementsByTagName("span")[0].innerText;
+		if (tabName==filename) {
+			textareas = document.getElementsByTagName("textarea");
+			textareas[i+2].value="";
+		}
+		}
+	}
+}
+
+function filewrite101(filename,data,mode) {
+        var tabs = document.querySelectorAll(".tabbox li");
+	
+		for (var i = 0; i < tabs.length; i++) {
+		tabName = tabs[i].getElementsByTagName("span")[0].innerText;
+		if (tabName==filename) {
+			textareas = document.getElementsByTagName("textarea");
+			if (textareas[i+2].value=="") {
+				textareas[i+2].value = data;
+			} else {
+				textareas[i+2].value = textareas[i+2].value + "\n" + data;
+			}				
+		}
+		}
+	
+}	
+
+preview_div = document.getElementById("codeEditor");
+editor_div = document.getElementById("preview");
+split = document.getElementById("splitbar");
+
+var editor;
+split.onmousedown = function(event) { 
+  var t = event.target;
+  var xCord = event.clientX-12;
+  //var xPercent = xCord / window.innerWidth
+  var xPercent = (xCord) / document.getElementById("codeSection").offsetWidth;
+  t.ondragstart = function() {
+      return false;
+  };
+  moveAt(xPercent)
+  
+  function moveAt(xPercent) {     
+    var p = (xPercent * 100).toFixed(2)
+    if(p < 20) { p = 20 } 
+    if(p > 95) { p = 95 } 
+    editor_div.style.width = (100 - p -0.5) + "%"
+    preview_div.style.width = (p-0.5) + "%"
+  }
+  
+  function onMouseMove(event) {
+    var xCord = event.clientX;
+    // var yCord = event.clienty
+    //var xPercent = xCord / window.innerWidth
+    var xPercent = xCord / document.getElementById("codeSection").offsetWidth;
+    // var yPercent = yCord / window.innerHeight 
+    moveAt(xPercent);    
+  }
+  document.addEventListener('mousemove', onMouseMove)
+  t.onmouseup = function() {
+    document.removeEventListener('mousemove', onMouseMove)
+    document.removeEventListener('mouseup', onMouseMove)    
+    t.onmouseup = null;
+  }
+        
+  // Added InCase The Handle Get Orphaned
+  document.addEventListener('mouseup', () => {
+    document.removeEventListener('mouseup', onMouseMove)    
+    document.removeEventListener('mousemove', onMouseMove)  
+  })
+}
+
+function outputError(msg) {
+  document.getElementById("error").innerHTML = "<span>" + msg + "</span>";
+}
+
+function clearError() {
+  document.getElementById("error").innerHTML = "";
+}
+
+function changeOutput(className) {
+	theme = className;
+  document.getElementById("preview").classList=[className]
+  if (className=="seti") {
+	  document.getElementById("codeEditor").style.backgroundColor="#151718";
+  } else if (className=="eclipse") {
+	  document.getElementById("codeEditor").style.backgroundColor="#EEE";
+  } else {
+	  document.getElementById("codeEditor").style.backgroundColor="#0F192A";
+  }
+}
+
+$('#codeCanvas').hide();
+$(document).ready(function () {
+    var output = $('#edoutput');
+    var outf = function (text) {
+	  if (text.endsWith('\n\n')) text=text.substring(0,text.length-1);
+      output.text(output.text() + text); 
+    };
+    var defaultTimeLimit = Sk.execLimit;
+    var keymap = {
+		Tab: function(cm) { if (cm.somethingSelected()) { cm.indentSelection("add") } else {cm.replaceSelection(cm.getOption("indentWithTabs")? "\t": Array(cm.getOption("indentUnit") + 1).join(" "), "end", "+input") }},
+		"Shift-Tab": (cm) => cm.execCommand("indentLess"),
+		Insert: (cm) => {cm.toggleOverwrite(false)},
+		"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor())},
+        "Ctrl-Enter" : function (editor) {
+		if  (document.getElementById("firstTab").className != "selected") {
+				document.getElementById("firstTab").click();
+        }
+		var tabs = document.querySelectorAll(".tabbox li");
+	
+		for (var i = 0; i < tabs.length; i++) {
+		tabName = tabs[i].getElementsByTagName("span")[0].innerText;
+		if (tabName.slice(-3) != ".py") {
+			textareas = document.getElementsByTagName("textarea");
+			textareas[i+2].id=tabName;
+		}
+		}
+
+			Sk.execLimit = defaultTimeLimit;
+            Sk.configure({output: outf,read: builtinRead, inputfun:sInput, inputfunTakesPrompt: true, __future__: Sk.python3});
+            Sk.inBrowser = true;
+			Sk.canvas = "mycanvas";
+            if (editor.getValue().indexOf('turtle') > -1 ) {
+                $('#codeCanvas').hide()
+            } else {
+				$('#codeCanvas').hide();
+			}	
+            Sk.pre = "edoutput";
+            (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+            $('#edoutput').text('');
+			$("#programInputField").off("keyup");
+			$('#submitInput').off('click');
+			document.getElementById("inputPrompt").style.display="none";
+			var marks = editor.getAllMarks();
+	        for (let i = 0; i < marks.length; i++) {marks[i].clear();}
+			clearError();
+          
+            try {
+				$("#skulpt_stop").hide()
+				$("#skulpt_run").hide()
+				var pre4s =  Sk.misceval.asyncToPromise(function() {
+						return Sk.importMainWithBody("<stdin>",false,editor.getValue(),true);
+				});
+				pre4s.then(function () {
+					setTimeout(function() {$("#skulpt_stop").hide(); $("#skulpt_run").hide();}, 300);
+	
+					console.log("Finished running the programm");
+				}, function (err) {
+					$("#skulpt_stop").hide()
+					$("#skulpt_run").hide()					
+					console.info('errorHandler', err);
+				// do something with the Python/Skulpt errror here
+				var msg = err.toString().replace("ValueError:","Error: ");
+                
+				if (err.traceback) {
+			      for (let i = 0; i < err.traceback.length; i++) {
+					if (err.traceback[i].filename=="<stdin>.py") {
+					msg += "<br/>  &gt; main.py line " + err.traceback[i].lineno;
+					} else {	
+					msg += "<br/>  &gt; " + err.traceback[i].filename.replace("src/lib/","") + " line " + err.traceback[i].lineno;
+					}
+			        //if ("colno" in err.traceback[i]) {
+			   //       ret += " column " + err.traceback[i].colno;
+			   //     }
+			   if (err.traceback[i].filename=="<stdin>.py") {
+					editor.markText({line: err.traceback[i].lineno-1, ch: 0}, {line: err.traceback[i].lineno, ch: 0}, {className: "line-error"});
+			   }
+			   }
+			   }
+				outputError(msg);
+				});
+			} catch(e) {
+				$("#skulpt_stop").hide()
+				$("#skulpt_run").hide()
+				outf(e.toString() + "\n");
+			}
+        },
+        "Shift-Enter": function (editor) {
+			if  (document.getElementById("firstTab").className != "selected") {
+				document.getElementById("firstTab").click();
+            }
+			var tabs = document.querySelectorAll(".tabbox li");
+	
+			for (var i = 0; i < tabs.length; i++) {
+			tabName = tabs[i].getElementsByTagName("span")[0].innerText;
+			if (tabName.slice(-3) != ".py") {
+				textareas = document.getElementsByTagName("textarea");
+				textareas[i+2].id=tabName;
+			}
+			}
+
+			Sk.execLimit = defaultTimeLimit;
+			Sk.configure({output: outf, read: builtinRead, inputfun:sInput, inputfunTakesPrompt: true, __future__: Sk.python3});
+
+            Sk.inBrowser = true;
+			Sk.canvas = "mycanvas";
+            Sk.pre = "edoutput";
+            if (editor.getValue().indexOf('turtle') > -1 ) {
+                $('#codeCanvas').show()
+            } else {
+				$('#codeCanvas').hide();
+			}	
+            try {
+				$('#edoutput').text('');
+				document.getElementById("inputPrompt").style.display="none";
+				var marks = editor.getAllMarks();
+				for (let i = 0; i < marks.length; i++) {marks[i].clear();}
+				clearError();
+				$("#programInputField").off("keyup");
+				$('#submitInput').off('click');
+				$("#skulpt_stop").hide()
+				$("#skulpt_run").hide()
+				var pre4s = Sk.misceval.asyncToPromise(function() {
+					return Sk.importMainWithBody("<stdin>",false,editor.getValue(),true);
+				});
+				pre4s.then(function () {
+				setTimeout(function() {$("#skulpt_stop").hide(); $("#skulpt_run").hide();}, 300);
+				console.log("Finished running the programm");
+				}, function (err) {
+				$("#skulpt_stop").hide()
+                $("#skulpt_run").show()
+				console.info('errorHandler', err);
+				// do something with the Python/Skulpt errror here
+				var msg = err.toString();
+				if (err.traceback) {
+			      for (let i = 0; i < err.traceback.length; i++) {
+					//ret += "\n  at " + err.traceback[i].filename + " line " + err.traceback[i].lineno;
+			        //if ("colno" in err.traceback[i]) {
+			   //       ret += " column " + err.traceback[i].colno;
+			   //     }
+			   editor.markText({line: err.traceback[i].lineno-1, ch: 0}, {line: err.traceback[i].lineno, ch: 0}, {className: "line-error"});
+			   }
+				}
+				// let ret = err.toString(); // Simple output message
+
+				// Create stacktrace message
+			   // if (err.traceback) {
+			   //   for (let i = 0; i < err.traceback.length; i++) {
+					//ret += "\n  at " + err.traceback[i].filename + " line " + err.traceback[i].lineno;
+			   //     if ("colno" in err.traceback[i]) {
+			   //       ret += " column " + err.traceback[i].colno;
+			   //     }
+			   //   }
+			   // }
+				outputError(msg);
+				});
+			} catch(e) {
+				$("#skulpt_stop").hide()
+				$("#skulpt_run").hide()
+                outf(e.toString() + "\n");
+            }
+        }
+    }
+
+     editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+        parserfile: ["parsepython.js"],
+		mode: "python",
+        autofocus: true,
+        theme: theme,
+        lineNumbers: true,
+        textWrapping: false,
+        indentUnit: 4,
+        height: "100%",
+        autoMatchParens: true,
+        extraKeys: keymap,
+        matchBrackets: true,
+        styleActiveLine: true,
+    foldGutter: true,
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+        parserConfig: {'pythonVersion': 2, 'strictErrors': true}
+    });
+	
+  editor.setOption("theme", theme);
+  changeOutput(theme);
+  $("#eclipse").click(function (e) {editor.setOption("theme", "eclipse"); changeOutput("eclipse");} );
+  $("#seti").click(function (e) {editor.setOption("theme", "seti"); changeOutput("seti");} );
+  $("#midnight").click(function (e) {editor.setOption("theme", "midnight"); changeOutput("midnight");} );
+  
+  
+  $("#downloadBtn").click(function (e) {
+const blob = new Blob([editor.getValue()], { type: "text/plain"});
+  const url = URL.createObjectURL(blob);
+ 
+  const downloadAs = document.querySelectorAll(".nav ul li.selected")[0].innerText;
+  const domNode = document.createElement('a');
+  downloadAs && (domNode.download = downloadAs);
+  !downloadAs && (domNode.target = "_blank");
+  domNode.href = url;
+  domNode.style.display = 'none';
+  document.body.appendChild(domNode);
+  domNode.click();
+  document.body.removeChild(domNode);
+  } );
+
+  $("#textIncrease").click(function (e) {
+      var size = parseInt($('#codeSection').css('font-size'));
+      if (size<=24) $("#codeSection").css("font-size", (size+2) + "px");
+  } );
+   $("#textDecrease").click(function (e) {
+      var size = parseInt($('#codeSection').css('font-size'));
+      if (size>=12) $("#codeSection").css("font-size", (size-2) + "px");
+  } );
+    $("#skulpt_run").click(function (e) { keymap["Ctrl-Enter"](editor)} );
+
+    var exampleCode = function (id, text) {
+        $(id).click(function (e) {
+            editor.setValue(text);
+            editor.focus(); // so that F5 works, hmm
+        });
+    };
+
+    /*exampleCode('#codeexample1', "print(\"Hello, World!\")");
+    exampleCode('#codeexample2', "for i in range(5):\n    print(i)");*/
+
+    $('#clearoutput').click(function (e) {
+        $('#edoutput').text('');
+        $('#codeCanvas').hide();
+		document.getElementById("inputPrompt").style.display="none";
+		clearError();
+		$("#programInputField").off("keyup");
+		$('#submitInput').off('click');
+		var marks = editor.getAllMarks();
+		for (let i = 0; i < marks.length; i++) {marks[i].clear();}
+		
+    });
+
+	$('#helpBtn').click(function (e) {
+        $('#edoutput').text('');
+        $('#codeCanvas').hide();
+		document.getElementById("inputPrompt").style.display="none";
+		clearError();
+		$("#programInputField").off("keyup");
+		$('#submitInput').off('click');
+		var marks = editor.getAllMarks();
+		for (let i = 0; i < marks.length; i++) {marks[i].clear();}
+		var html = `<h2><span class="material-symbols-outlined">
+HELP
+</span>Help using LonePy Python Compiler</h2><br/>
+<b>Shortcut Keys:</b>
+When using this IDE, click on your code and use the following shortcuts:<br/>
+	CTRL + ENTER to execute your code (equivalent to clicking the RUN button)
+	CTRL + A to select all of your code
+	CTRL + C to copy the selected code to your clipboard
+	CTRL + V to pasted some code from the clipboard
+	
+You can also select a section of code and use:
+	TAB key to indent all the selected code	
+	SHIFT + TAB to unindent the selected code
+
+You can collapse or expand a section of code using CTRL + Q (Based on the position of your cursor in the code)
+Only sections of code that are indented can be collpased/Expanded.
+
+You can undo and redo previous changes made to your code using:
+	CTRL + Z to undo changes
+	CTRL + Y to redo changes that have been undone.
+	
+<b>Need help with the Python syntax?</b>
+Access the Python helpsheet by clicking on the green bar to the right -&gt; (only availbale in full screen view)
+
+<b>Built-in libraries:</b>
+This IDE includes some built-in libraries that you can import in your projects including:
+	Turtle library (import turtle)
+	Random library (import random)
+	Time library (import time)
+	Datetime library (import datetime)
+	Math library (import math)
+	JSON library (import json)
+	`;
+    	$('#edoutput').html(html);
+	});
+
+  $("#skulpt_stop").click(function (e) {  
+	$("#skulpt_stop").hide()
+	$("#skulpt_run").hide()
+	Sk.execLimit = 1;
+    Sk.timeoutMsg = function() {
+        Sk.execLimit = defaultTimeLimit;
+        return "Program Stopped.";
+    }} );
+
+    function sInput(pprompt){
+
+	return new Promise(function(resolve,reject){
+	var modal = document.getElementById("inputs");
+    document.getElementById("inputMsg").innerText = pprompt;
+	document.getElementById("programInputField").innerText="";
+	document.getElementById("inputPrompt").style.display="block";
+	// When the user clicks on the button, open the modal
+	modal.style.display = "block";
+	document.getElementById("programInputField").focus();
+         $("#programInputField").on("keyup",function(e){
+             if (e.keyCode == 13)
+             {
+                 // remove keyup handler from #output
+                 $("#programInputField").off("keyup");
+				 $('#submitInput').off('click');
+                 // resolve the promise with the value of the input field
+                  document.getElementById("inputPrompt").style.display="none";
+				  outf(pprompt + " " + $("#programInputField").text() + "\n");
+				  resolve($("#programInputField").text());
+             }
+         })
+		 
+		 	$('#submitInput').click(function (e) {
+				$("#programInputField").off("keyup");
+				$('#submitInput').off('click');
+                 // resolve the promise with the value of the input field
+                  document.getElementById("inputPrompt").style.display="none";
+				  outf(pprompt + " " + $("#programInputField").text() + "\n");
+				  resolve($("#programInputField").text());
+   });
+      });
+}
+
+
+function loadDependency(filename) {
+     return new Promise(function(resolve, reject) {
+         var scriptElement = document.createElement("script");
+         scriptElement.type = "text/javascript";
+         scriptElement.src = filename;
+         scriptElement.onload = function() {
+              resolve(true);
+         }
+         scriptElement.onerror = function() {
+			 resolve(false);
+         }
+         document.body.appendChild(scriptElement);
+    });
+}
+
+function builtinRead(x) {
+	var ignoredBuiltins = ['src/builtin/os.js','src/builtin/os/__init__.js','src/lib/os.js','src/lib/os/__init__.js','./os.js','./os/__init__.js','src/builtin/os.py','src/builtin/os/__init__.py','src/lib/os.py','src/lib/os/.py'];
+		
+    if (x==="src/builtin/os.js") {
+	return "var $builtinmodule = function (name) {var mod = {}; mod.system = new Sk.builtin.func(function (cmd) { Sk.builtin.pyCheckArgs('system', arguments, 1, 1); Sk.builtin.pyCheckType('cmd', 'string', Sk.builtin.checkString(cmd)); var value = Sk.ffi.remapToJs(cmd); if (value === 'cls' || value === 'clear') { $('#edoutput').text(''); return Sk.builtin.asnum$(0); } return new Sk.builtin.str('sh: ' + value + ': command not found.'); }); return mod;};";}
+	
+	if (x==="src/builtin/json.js") {
+	return 'var $builtinmodule=function(r){"use strict";var e={},a=function(r){Sk.builtin.pyCheckArgs("dumps",arguments,1,1/0,!0,!1);var e,a,t,i=Array.prototype.slice.call(arguments,1),s=new Sk.builtins.dict(r),n=!1;return e={ascii:!0,separators:{item_separator:", ",key_separator:": "}},s=Sk.ffi.remapToJs(s),a=Sk.ffi.remapToJs(i[0]),"boolean"==typeof s.ensure_ascii&&!1===s.ensure_ascii&&(e.ascii=!1),"boolean"==typeof s.sort_keys&&s.sort_keys&&(n=!0),n||(e.cmp=function(r,e){return 0}),"object"==typeof s.separators&&2==s.separators.length&&(e.separators.item_separator=s.separators[0],e.separators.key_separator=s.separators[1]),s.indent&&(e.space=s.indent),s.default,t=JSON.stringify(a,e,s.indent||1),new Sk.builtin.str(t)};a.co_kwargs=!0,e.dumps=new Sk.builtin.func(a);var t=function(r){Sk.builtin.pyCheckArgs("loads",arguments,1,1/0,!0,!1);var e,a,t=Array.prototype.slice.call(arguments,1),i=new Sk.builtins.dict(r);return i=Sk.ffi.remapToJs(i),e=t[0].v,a=JSON.parse(e),Sk.ffi.remapToPy(a)};t.co_kwargs=!0,e.loads=new Sk.builtin.func(t);var i=function(r){Sk.builtin.pyCheckArgs("load",arguments,1,1/0,!0,!1);var e,a,t,i=Array.prototype.slice.call(arguments,1),s=new Sk.builtins.dict(r);return s=Sk.ffi.remapToJs(s),t=i[0],e=Sk.misceval.callsim(Sk.builtin.file.prototype.read,t).v,a=JSON.parse(e),Sk.ffi.remapToPy(a)};return i.co_kwargs=!0,e.load=new Sk.builtin.func(i),e};';}
+
+    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined) {
+        // means this name "x" is not a builtin library in Python	
+	   if ((x.slice(0,8) === "src/lib/") && (x.slice(-3)===".py")) {
+		   var tabs = document.querySelectorAll(".tabbox li");
+	
+		   for (var i = 0; i < tabs.length; i++) {
+				tabName = tabs[i].getElementsByTagName("span")[0].innerText;
+				
+				if (tabName == x.slice(8)) {
+				textareas = document.getElementsByTagName("textarea");
+			return textareas[i+2].value;
+				}
+           }    
+       }
+       else { 
+           throw "File not found: '" + x + "'";
+       }
+    }
+    else {
+		    if (Sk.builtinFiles && 
+        Sk.builtinFiles.files && 
+        Sk.builtinFiles.files[x] && 
+        ignoredBuiltins.indexOf(x) === -1) {
+        console.log('builtin: ' + x);
+      return Sk.builtinFiles.files[x];
+    }
+        //return Sk.builtinFiles["files"][x];
+    }
+	//}
+	}
+     editor.focus();
+});
+
+var tab=1;
+var that = null;
+var currentTextarea = "main";
+class Tab {
+  constructor(id) {
+    that = this;
+    this.main = document.querySelector(id);
+    this.add = this.main.querySelector(".tabAdd");
+    this.ul = this.main.querySelector(".nav ul:first-child");
+    this.sectionFather = document.querySelector(".tabCon");
+    this.init();
+  }
+
+  init() {
+    this.updateNode();
+    this.add.onclick = this.addTab;
+    for (var i = 0; i < this.lis.length; i++) {
+      this.lis[i].index = i;
+      this.lis[i].onclick = this.toggleTab;
+	  if (this.remove[i]) {
+        this.remove[i].onclick = this.removeTab;
+      }
+	}
+  }
+  updateNode() {
+    this.lis = this.main.querySelectorAll("li");
+    this.sections = document.querySelectorAll("section");
+    this.remove = this.main.querySelectorAll(".nav ul .iconfont");
+  }
+
+  toggleTab() {
+	that.clearClass();
+    this.className = "selected";
+
+    //that.sections[this.index].className = "selected";
+  	   if (currentTextarea!="") document.getElementById(currentTextarea).value = editor.getValue();
+	   
+	   if (this.index==0) {   
+		currentTextarea="main";
+	   } else {
+		currentTextarea=that.sections[this.index].getElementsByTagName("textarea")[0].id;
+	   }   
+	   editor.setValue(document.getElementById(currentTextarea).value);       
+  }
+
+  addTab() {
+	  tab++;
+    var li =
+      '<li class="selected"><span contenteditable>new_module.py</span><i class="iconfont">&#10799;</i></li>';
+    var sec = '<section><textarea id="code_'+tab+'"></textarea></section>';
+    that.clearClass();
+   that.ul.insertAdjacentHTML("beforeend", li);  
+   that.sectionFather.insertAdjacentHTML("beforeend", sec);
+    that.init();
+	document.getElementById(currentTextarea).value = editor.getValue();
+	currentTextarea = 'code_'+tab;
+	editor.setValue("");
+
+  }
+  removeTab(e) {
+    e.stopPropagation();
+    if (window.confirm("Are you sure you would like to delete this tab and all its content?")) {
+	document.getElementById(currentTextarea).value = editor.getValue();
+	var index = this.parentNode.index;
+    that.lis[index].remove();
+    that.sections[index].remove();
+    that.init();
+	
+  	//  clearClass();
+
+    //if (document.querySelector(".selected")) {
+		currentTextarea = "";
+	    that.lis[0] && that.lis[0].click();
+	//return;
+	//}
+	index--;
+     	currentTextarea = "";
+	    that.lis[index] && that.lis[index].click();
+	
+	//editor.setValue(document.getElementById(currentTextarea).value); 
+	//that.lis[index][0].className="selected";
+  }
+    }
+	
+  clearClass() {
+    for (var i = 0; i < this.lis.length; i++) {
+      this.lis[i].className = "";
+      //this.sections[i].className = "";
+    }
+  }
+}
+document.getElementById('exit').addEventListener('click', () => {
+    if (confirm('Are you sure you want to exit?')) {
+        window.close();
+    }
+});
+function toggleScreen() {
+	if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+	document.getElementById("icon101").style.display="none";
+	document.getElementById("icon102").style.display="inline-block";
+  } else if (document.exitFullscreen) {
+    document.exitFullscreen();
+  	//document.getElementById("icon102").style.display="none";
+	//document.getElementById("icon101").style.display="inline-block";
+  }
+}
+$("#icon101").click(function (e) {
+   toggleScreen();
+  } ); 
+$("#icon102").click(function (e) {
+  toggleScreen();
+  } ); 
+
+if (document.addEventListener)
+{
+ document.addEventListener('fullscreenchange', exitHandler, false);
+ document.addEventListener('mozfullscreenchange', exitHandler, false);
+ document.addEventListener('MSFullscreenChange', exitHandler, false);
+ document.addEventListener('webkitfullscreenchange', exitHandler, false);
+}
+
+function exitHandler()
+{
+ if (!document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement)
+ {
+    document.exitFullscreen();
+  	document.getElementById("icon102").style.display="none";
+	document.getElementById("icon101").style.display="inline-block";
+ }
+}
+
+document.getElementById("main").value = document.getElementById("code").value;
