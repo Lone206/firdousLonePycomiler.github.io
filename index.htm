@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>LONEPYCOMPILER</title>
+  <link rel="stylesheet" href="./mycompiler/codemirror.css">
+  <link rel="stylesheet" href="./mycompiler/style.css">
+  <link rel="stylesheet" href="./mycompiler/foldgutter.css">
+<link rel="stylesheet" href="./mycompiler/css2">
+ <link type="text/css" rel="stylesheet" href="./mycompiler/css2(1)"></head>
+<body>
+<div class="wrapper side-panel-close">
+  <div class="main">
+<div id="code101">
+  <div id="topbar" class="prevent-select">
+</span></span>
+</div>
+<div class="prevent-select">
+<button id="skulpt_run" class="btn"><span class="material-symbols-outlined">
+</span>RUN</button>
+<button id="skulpt_stop" class="btn" style="display: none;"><span class="material-symbols-outlined">
+</span>STOP</button>
+<button id="clearoutput" class="btn"><span class="material-symbols-outlined">
+</span>CLEAR</button>
+<button id="textIncrease" class="btn2">&nbsp;<span class="material-symbols-outlined">
+</span>A+</button>
+<button id="textDecrease" class="btn2">&nbsp;<span class="material-symbols-outlined">
+</span>A-</button>  
+<button id="midnight" class="btn2">&nbsp;<span class="material-symbols-outlined">
+</span>THEME-1</button>
+<button id="eclipse" class="btn2">&nbsp;<span class="material-symbols-outlined">
+</span>THEME-2</button>
+<button id="seti" class="btn2">&nbsp;<span class="material-symbols-outlined">
+</span>THEME-3</button>
+<button id="resetBtn" class="btn">&nbsp;<span class="material-symbols-outlined">
+</span>RESET</button>
+<button id="downloadBtn" class="btn"><span class="material-symbols-outlined">
+</span>DOWNLOAD</button>
+<button id="helpBtn" class="btn"><span class="material-symbols-outlined">
+</span>HELP</button>
+</div>   
+  <div id="IDE"style="margin-top:1px;">
+  <div id="codeSection"style="background: #555;color: #D1EDFF;">
+  <div id="codeEditor" style="background-color: rgb(15, 25, 42);">
+  <div id="tablesplit" style="display:table; table-layout: fixed; width: 100%;height:350px;">
+<div class="tabbox" id="tab" style="display:table-row;">
+<nav class="nav">
+<ul>
+	<li class="selected" id="firstTab"style="margin-left:30px;"><span>main.py</span></li>
+	
+</ul>
+<div class="tabAdd prevent-select"><span class="iconfont">+</span></div>
+</nav>
+</div>
+<div class="tabCon" style="display:table-row;">
+<section class="selected">
+<textarea id="code" style="display: none;">
+print("I Am Learning Python at Ais")
+</textarea>
+
+</div>
+</div>  
+</div>  
+
+<div id="splitbar"></div>
+
+<div id="preview" class="midnight"style="background: #0F192A;padding:20px;min-width:47%;max-width:47%;">
+
+  <div id="codeCanvas" style="display: none;">
+
+	<div id="mycanvas" height="400" width="100%"></div>
+  </div>
+  <div id="codeOutput">
+	<pre id="edoutput"></pre>
+	<div id="inputs">
+		<div id="inputPrompt" style="display: none;"><div id="inputMsg"></div><span id="programInputField" contenteditable=""></span><span class="material-symbols-outlined" id="submitInput">
+task_alt
+</span></div>
+	</div>
+	<div id="error"></div>
+  </div>
+
+  </div>
+</div>
+  </div>  
+<div id="footer"> 
+<span style="color:#777;">| Python Compiler | Design & Development | Lone A Firdous |</span> 
+</div>
+</div>
+</div>
+
+	
+  
+<button class="side-panel-toggle prevent-select" type="button"style=" background: #000;">
+<span class="material-symbols-outlined sp-icon-open">
+<<
+</span>
+<span class="material-symbols-outlined sp-icon-close">
+>>
+</span>
+</button>
+<div class="side-panel">
+<div id="help"style="overflow-y:hidden;scrollbar-width:none;"> <div id="topbar" class="prevent-select">
+ <img src="./mycompiler/python-101.png" width="17" align="absmiddle"> PYTHON TUTORIAL
+</div>
+
+<div style="overflow-y:auto;scrollbar-width:none;height: 536px;">
+ <ul id="accordion" class="accordion">
+
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Intro<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:#5e5a5a;font-size: 13px;text-align:center;">Python is one of the most widely used programming languages nowadays. Despite being a general-purpose language, its applications span a wide range, including web development, IoT, machine learning, and artificial intelligence.
+
+This Python tutorial is to assist the basic programmers in understanding the fundamentals to more complex ideas of the Python programming language. Upon finishing this training, you will have a great deal of proficiency with Python, which will allow you to advance and become a highly skilled software engineer.
+
+</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">* What is Python? *</span></li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;">Python is a widely used high-level, object-oriented, interpreted, general-purpose computer language. Python is a garbage-collected programming language with dynamic typing. Guido van Rossum designed it between 1985 and 1990. The GNU General Public License (GPL) is used to distribute Python source code, much like it is for Perl.
+</span>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;"> * Python Jobs *</span></li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;">Today, a Python Programmer with 3-5 years of expertise is asking for an annual salary of roughly $150,000, and Python is the most demanding programming language. However, this may vary based on the location of the job. It's impossible to list all of the firms that use Python, but a few big ones are:
+Google-Intel-NASA-PayPal-Facebook-IBM-Amazon-Netflix-Pinterest-Uber and many more...
+</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;"> * Why to Learn Python? *</span></li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is Open Source which means its available free of cost."</li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is simple and so easy to learn"</li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is versatile and can be used to create many different things."</li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python has powerful development libraries include AI, ML etc."</li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;">#Python is much in demand and ensures high salary"</li>
+<li><span style="color:red;font-size: 12px;font-weight: bold;"> * Python Features*</span></li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is Interpreted − Python is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP."</li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is Interactive − You can actually sit at a Python prompt and interact with the interpreter directly to write your programs.</li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is Object-Oriented − Python supports Object-Oriented style or technique of programming that encapsulates code within objects.</li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;"># Python is a Beginner's Language − Python is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.</li>
+<li><span style="color:red;font-size: 12px;font-weight: bold;"> * My Python Online Compiler *</span></li>
+<li><span style="color:#5e5a5a;font-size: 13px;text-align:center;">My Python programming tutorial provides various examples to explain different programming concepts. I have provided Online Python Compiler/Interpreter on the left side of the screen. You can Edit and Execute almost all the 
+examples directly from your browser without the need to set up your development environment.</li>
+
+</ul>
+  </li>
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Syntax:Print()<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">5: * Example: Print numbers *</span></li>
+<li><span class="annotate"># Print an integer</span>print(100)</li>
+<li><span class="annotate"># Print a float</span>print(3.14)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">6: * Example: Concatenate strings *</span></li>
+<li><span class="annotate"># Declare string variables</span>greeting = "Hello"</li>
+<li><span class="annotate"># Declare another string variable</span>name = "Charlie"</li>
+<li><span class="annotate"># Concatenate and print</span>print(greeting + ", " + name + "!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">7: * Example: Print escape characters *</span></li>
+<li><span class="annotate"># Print with new line</span>print("Hello\nWorld")</li>
+<li><span class="annotate"># Print with tab space</span>print("Hello\tWorld")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">8: * Example: Print a list *</span></li>
+<li><span class="annotate"># Declare a list</span>fruits = ["apple", "banana", "cherry"]</li>
+<li><span class="annotate"># Print the list</span>print(fruits)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">9: * Example: Suppress newline in print *</span></li>
+<li><span class="annotate"># Print without new line</span>print("Hello", end=" ")</li>
+<li><span class="annotate"># Continue on the same line</span>print("World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">10: * Example: Print a formatted float *</span></li>
+<li><span class="annotate"># Print a formatted float with 2 decimal places</span>print(f"Pi is approximately: {3.14159:.2f}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">11: * Example: Print with padding *</span></li>
+<li><span class="annotate"># Print with padding</span>print(f"Number: {7:03}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">12: * Example: Print left-aligned text *</span></li>
+<li><span class="annotate"># Print left-aligned text</span>print(f"{'Hello':<10} World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">13: * Example: Print right-aligned text *</span></li>
+<li><span class="annotate"># Print right-aligned text</span>print(f"{'Hello':>10} World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">14: * Example: Print centered text *</span></li>
+<li><span class="annotate"># Print centered text</span>print(f"{'Hello':^10} World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">15: * Example: Print with string interpolation *</span></li>
+<li><span class="annotate"># String interpolation in print</span>name = "Alice"</li>
+<li><span class="annotate"># Print interpolated string</span>print(f"Hello, {name}!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">16: * Example: Print a complex number *</span></li>
+<li><span class="annotate"># Print a complex number</span>print(3 + 5j)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">17: * Example: Print boolean expressions *</span></li>
+<li><span class="annotate"># Print a boolean expression</span>print(5 > 3)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">18: * Example: Print file content *</span></li>
+<li><span class="annotate"># Print content of a file</span>with open('example.txt', 'r') as file:</li>
+<li><span class="annotate"></span>    print(file.read())</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">19: * Example: Print with a loop *</span></li>
+<li><span class="annotate"># Print numbers using a loop</span>for i in range(5):</li>
+<li><span class="annotate"></span>    print(i)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">20: * Example: Print exception handling *</span></li>
+<li><span class="annotate"># Print an error message in exception handling</span>try:</li>
+<li><span class="annotate"></span>    result = 10 / 0</li>
+<li><span class="annotate">except ZeroDivisionError:</span></li>
+<li><span class="annotate"></span>    print("Error: Division by zero!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">21: * Example: Print list comprehension *</span></li>
+<li><span class="annotate"># Print list comprehension result</span>numbers = [x**2 for x in range(5)]</li>
+<li><span class="annotate"></span>print(numbers)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">22: * Example: Print date and time *</span></li>
+<li><span class="annotate"># Print the current date and time</span>import datetime</li>
+<li><span class="annotate">print(datetime.datetime.now())</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">23: * Example: Print memory address of a variable *</span></li>
+<li><span class="annotate"># Print memory address of a variable</span>x = 10</li>
+<li><span class="annotate">print(hex(id(x)))</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">24: * Example: Print formatted dictionary *</span></li>
+<li><span class="annotate"># Print formatted dictionary</span>my_dict = {"name": "John", "age": 30}</li>
+<li><span class="annotate">print(f"Name: {my_dict['name']}, Age: {my_dict['age']}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">25: * Example: Print after importing a module *</span></li>
+<li><span class="annotate"># Import math module and print a value</span>import math</li>
+<li><span class="annotate">print(math.pi)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">26: * Example: Print bytes *</span></li>
+<li><span class="annotate"># Print a byte object</span>byte_data = b"Hello"</li>
+<li><span class="annotate">print(byte_data)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">27: * Example: Print list elements on separate lines *</span></li>
+<li><span class="annotate"># Print each element of a list on a new line</span>fruits = ["apple", "banana", "cherry"]</li>
+<li><span class="annotate">for fruit in fruits:</span></li>
+<li><span class="annotate"></span>    print(fruit)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">28: * Example: Print with keyword arguments *</span></li>
+<li><span class="annotate"># Print using keyword arguments</span>print("Hello", "World", sep="-", end="!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">29: * Example: Print a tuple *</span></li>
+<li><span class="annotate"># Print a tuple</span>my_tuple = (1, 2, 3)</li>
+<li><span class="annotate">print(my_tuple)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">30: * Example: Print set elements *</span></li>
+<li><span class="annotate"># Print elements of a set</span>my_set = {1, 2, 3}</li>
+<li><span class="annotate">print(my_set)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">31: * Example: Print None type *</span></li>
+<li><span class="annotate"># Print a None value</span>x = None</li>
+<li><span class="annotate">print(x)</li>   
+</ul>
+  </li>
+
+  <li>
+    <div class="link"><span class="icon material-symbols-outlined">
+</span>Python Syntax:Input()<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+<li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Text Input *</span></li>
+<li><span class="annotate"># enter a text input</span>text = input("Enter some text: ")</li>
+<li><span class="annotate"># print the entered text</span>print(f"You entered: {text}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Integer Input *</span></li>
+<li><span class="annotate"># enter an integer</span>number = int(input("Enter an integer: "))</li>
+<li><span class="annotate"># print the integer</span>print(f"You entered the integer: {number}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Float Input *</span></li>
+<li><span class="annotate"># enter a float number</span>float_num = float(input("Enter a float number: "))</li>
+<li><span class="annotate"># print the float number</span>print(f"You entered the float: {float_num}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Convert String to Integer *</span></li>
+<li><span class="annotate"># enter a number as string and convert it to integer</span>num_str = input("Enter a number: ")</li>
+<li><span class="annotate">num = int(num_str)</li>
+<li><span class="annotate"># print the converted number</span>print(f"Converted number: {num}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">5: * Example: Add Two Integer Inputs *</span></li>
+<li><span class="annotate"># input two integers</span>num1 = int(input("Enter first integer: "))</li>
+<li><span class="annotate">num2 = int(input("Enter second integer: "))</li>
+<li><span class="annotate"># print the sum</span>print(f"Sum of {num1} and {num2} is {num1 + num2}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">6: * Example: Input and Multiply Two Float Numbers *</span></li>
+<li><span class="annotate"># input two float numbers</span>num1 = float(input("Enter first float: "))</li>
+<li><span class="annotate">num2 = float(input("Enter second float: "))</li>
+<li><span class="annotate"># multiply the float numbers</span>result = num1 * num2</li>
+<li><span class="annotate"># print the result</span>print(f"Product of {num1} and {num2} is {result}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">7: * Example: Input a Character *</span></li>
+<li><span class="annotate"># input a single character</span>char = input("Enter a character: ")[0]</li>
+<li><span class="annotate"># print the character</span>print(f"You entered the character: {char}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">8: * Example: Input and Convert to Boolean *</span></li>
+<li><span class="annotate"># input a value and convert to boolean</span>val = input("Enter True or False: ").lower() == 'true'</li>
+<li><span class="annotate"># print the boolean value</span>print(f"Boolean value: {val}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Input a Name *</span></li>
+<li><span class="annotate"># enter name</span>name = input("Enter your name: ")</li>
+<li><span class="annotate"># print name</span>print(f"Hello, {{name}}!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Input Age *</span></li>
+<li><span class="annotate"># enter age</span>age = input("Enter your age: ")</li>
+<li><span class="annotate"># print age</span>print(f"You are {{age}} years old.")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Input Favorite Color *</span></li>
+<li><span class="annotate"># enter favorite color</span>color = input("Enter your favorite color: ")</li>
+<li><span class="annotate"># print color</span>print(f"Your favorite color is {{color}}.")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Input City *</span></li>
+<li><span class="annotate"># enter city</span>city = input("Enter your city: ")</li>
+<li><span class="annotate"># print city</span>print(f"You live in {{city}}.")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">5: * Example: Input Two Numbers and Add Them *</span></li>
+<li><span class="annotate"># enter two numbers</span>num1 = input("Enter first number: ")</li>
+<li><span class="annotate">num2 = input("Enter second number: ")</li>
+<li><span class="annotate"># add numbers and print result</span>print(f"The sum is {{int(num1) + int(num2)}}.")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">6: * Example: Input a Favorite Food *</span></li>
+<li><span class="annotate"># enter favorite food</span>food = input("Enter your favorite food: ")</li>
+<li><span class="annotate"># print food</span>print(f"Your favorite food is {{food}}.")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">7: * Example: Input a Number and Double It *</span></li>
+<li><span class="annotate"># enter a number</span>num = input("Enter a number: ")</li>
+<li><span class="annotate"># double the number and print</span>print(f"Double of {{num}} is {{int(num) * 2}}.")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">8: * Example: Input a Sentence *</span></li>
+<li><span class="annotate"># enter a sentence</span>sentence = input("Enter a sentence: ")</li>
+<li><span class="annotate"># print the sentence</span>print(f"You entered: {{sentence}}.")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">9: * Example: Input Temperature and Convert to Celsius *</span></li>
+<li><span class="annotate"># enter temperature in Fahrenheit</span>fahrenheit = input("Enter temperature in Fahrenheit: ")</li>
+<li><span class="annotate"># convert to Celsius and print</span>celsius = (float(fahrenheit) - 32) * 5/9</li>
+<li><span class="annotate">print(f"Temperature in Celsius: {{celsius:.2f}}°C.")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">10: * Example: Input a Hobby *</span></li>
+<li><span class="annotate"># enter a hobby</span>hobby = input("Enter your favorite hobby: ")</li>
+<li><span class="annotate"># print hobby</span>print(f"Your favorite hobby is {{hobby}}.")</li>
+<li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Input Name and Greet *</span></li>
+<li><span class="annotate"># enter name</span>name = input("Enter your name: ")</li>
+<li><span class="annotate"># print greeting</span>print(f"Hello, {name}!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Input Two Numbers and Sum *</span></li>
+<li><span class="annotate"># input two numbers</span>num1 = int(input("Enter first number: "))</li>
+<li><span class="annotate">num2 = int(input("Enter second number: "))</li>
+<li><span class="annotate"># print sum</span>print(f"Sum: {num1 + num2}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Input Age and Print Year of Birth *</span></li>
+<li><span class="annotate"># input age</span>age = int(input("Enter your age: "))</li>
+<li><span class="annotate"># print year of birth</span>print(f"Year of birth: {2024 - age}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Input Number and Square it *</span></li>
+<li><span class="annotate"># input number</span>num = int(input("Enter a number: "))</li>
+<li><span class="annotate"># print square</span>print(f"Square: {num ** 2}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">5: * Example: Input Two Floats and Multiply *</span></li>
+<li><span class="annotate"># input two float numbers</span>num1 = float(input("Enter first float: "))</li>
+<li><span class="annotate">num2 = float(input("Enter second float: "))</li>
+<li><span class="annotate"># print multiplication</span>print(f"Product: {num1 * num2}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">6: * Example: Input and Check Even or Odd *</span></li>
+<li><span class="annotate"># input number</span>num = int(input("Enter a number: "))</li>
+<li><span class="annotate"># check even/odd</span>print(f"{num} is {'even' if num % 2 == 0 else 'odd'}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">7: * Example: Input and Calculate Area of Circle *</span></li>
+<li><span class="annotate"># input radius</span>radius = float(input("Enter radius: "))</li>
+<li><span class="annotate"># calculate and print area</span>area = 3.14159 * (radius ** 2)</li>
+<li><span class="annotate">print(f"Area: {area}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">8: * Example: Input First and Last Name and Combine *</span></li>
+<li><span class="annotate"># input first and last name</span>first_name = input("Enter first name: ")</li>
+<li><span class="annotate">last_name = input("Enter last name: ")</li>
+<li><span class="annotate"># print full name</span>print(f"Full Name: {first_name} {last_name}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">9: * Example: Input and Convert Celsius to Fahrenheit *</span></li>
+<li><span class="annotate"># input temperature in celsius</span>celsius = float(input("Enter temperature in Celsius: "))</li>
+<li><span class="annotate"># convert to fahrenheit</span>fahrenheit = (celsius * 9/5) + 32</li>
+<li><span class="annotate">print(f"Fahrenheit: {fahrenheit}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">10: * Example: Input String and Reverse *</span></li>
+<li><span class="annotate"># input a string</span>text = input("Enter a string: ")</li>
+<li><span class="annotate"># reverse and print</span>print(f"Reversed: {text[::-1]}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">11: * Example: Input and Calculate Simple Interest *</span></li>
+<li><span class="annotate"># input principal, rate, time</span>p = float(input("Enter principal: "))</li>
+<li><span class="annotate">r = float(input("Enter rate: "))</li>
+<li><span class="annotate">t = float(input("Enter time: "))</li>
+<li><span class="annotate"># calculate and print interest</span>interest = (p * r * t) / 100</li>
+<li><span class="annotate">print(f"Interest: {interest}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">12: * Example: Input Two Strings and Concatenate *</span></li>
+<li><span class="annotate"># input two strings</span>str1 = input("Enter first string: ")</li>
+<li><span class="annotate">str2 = input("Enter second string: ")</li>
+<li><span class="annotate"># print concatenated string</span>print(f"Concatenated: {str1 + str2}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">13: * Example: Input and Calculate Rectangle Perimeter *</span></li>
+<li><span class="annotate"># input length and width</span>length = float(input("Enter length: "))</li>
+<li><span class="annotate">width = float(input("Enter width: "))</li>
+<li><span class="annotate"># calculate and print perimeter</span>perimeter = 2 * (length + width)</li>
+<li><span class="annotate">print(f"Perimeter: {perimeter}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">14: * Example: Input and Check Leap Year *</span></li>
+<li><span class="annotate"># input year</span>year = int(input("Enter a year: "))</li>
+<li><span class="annotate"># check if leap year</span>is_leap = (year % 4 == 0 and year % 100 != 0) or year % 400 == 0</li>
+<li><span class="annotate">print(f"{year} is {'a leap year' if is_leap else 'not a leap year'}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">15: * Example: Input and Check Palindrome *</span></li>
+<li><span class="annotate"># input text</span>text = input("Enter a word: ")</li>
+<li><span class="annotate"># check palindrome</span>is_palindrome = text == text[::-1]</li>
+<li><span class="annotate">print(f"{text} is {'a palindrome' if is_palindrome else 'not a palindrome'}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">16: * Example: Input and Calculate BMI *</span></li>
+<li><span class="annotate"># input weight and height</span>weight = float(input("Enter weight (kg): "))</li>
+<li><span class="annotate">height = float(input("Enter height (m): "))</li>
+<li><span class="annotate"># calculate and print BMI</span>bmi = weight / (height ** 2)</li>
+<li><span class="annotate">print(f"BMI: {bmi:.2f}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">17: * Example: Input and Swap Two Numbers *</span></li>
+<li><span class="annotate"># input two numbers</span>a = int(input("Enter first number: "))</li>
+<li><span class="annotate">b = int(input("Enter second number: "))</li>
+<li><span class="annotate"># swap numbers</span>a, b = b, a</li>
+<li><span class="annotate">print(f"After swap: a = {a}, b = {b}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">18: * Example: Input and Check Prime Number *</span></li>
+<li><span class="annotate"># input a number</span>num = int(input("Enter a number: "))</li>
+<li><span class="annotate"># check prime</span>is_prime = all(num % i != 0 for i in range(2, num))</li>
+<li><span class="annotate">print(f"{num} is {'prime' if is_prime else 'not prime'}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">19: * Example: Input and Find Factorial *</span></li>
+<li><span class="annotate"># input number</span>num = int(input("Enter a number: "))</li>
+<li><span class="annotate"># calculate factorial</span>fact = 1</li>
+<li><span class="annotate">for i in range(1, num + 1): fact *= i</li>
+<li><span class="annotate">print(f"Factorial: {fact}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">20: * Example: Input and Reverse a Number *</span></li>
+<li><span class="annotate"># input number</span>num = input("Enter a number: ")</li>
+<li><span class="annotate"># reverse and print</span>print(f"Reversed: {num[::-1]}")</li>
+
+<!-- More examples can be generated similarly for the remaining 30 inputs -->
+
+    </ul>
+  </li>
+   
+     <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Python Variables<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+      <li><span class="annotate"># Initialising variables and constants of different data types:</span>
+      score = 0<br>
+      PI = 3.14<br>
+      message = "Hello World"<br>
+      soundOn = True</li>
+      <li><span class="annotate"># Arithmetic Operators:</span>
+        x = a + b  <span class="inline-annotate"># Add</span><br>
+x = a – b    <span class="inline-annotate"># Take away</span><br>
+x = a / b    <span class="inline-annotate"># Divide</span><br>
+x = a * b    <span class="inline-annotate"># Multiply</span><br>
+x = a ** 2    <span class="inline-annotate"># to the power of</span><br>
+x = a // b        <span class="inline-annotate"># Quotient DIV</span><br>
+x = a % b       <span class="inline-annotate"># Remainder MOD</span><br><br>
+x += 1 <span class="inline-annotate"># Increment x by 1</span><br>
+x -= 1 <span class="inline-annotate"># Decrement x by 1</span><br>
+x *= 2 <span class="inline-annotate"># Multiply x by 2</span><br>
+x /= 2 <span class="inline-annotate"># Divide x by 2</span>
+        </li>
+<li><span class="annotate"># Rounding a number:</span>
+      pi = 3.14159<br>
+      pi2 = round(pi,2)<br>
+      print("Pi rounded to two decimal places: " + str(pi2))   <span class="inline-annotate"># 3.14</span>
+</li>
+<li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Assign a Value to a Variable *</span></li>
+<li><span class="annotate"># assigning value to a variable</span>age = 25</li>
+<li><span class="annotate"># print variable</span>print(f"Age: {age}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Assign and Reassign a Variable *</span></li>
+<li><span class="annotate"># assigning value</span>x = 10</li>
+<li><span class="annotate"># reassigning new value</span>x = 20</li>
+<li><span class="annotate"># print variable</span>print(f"Updated x: {x}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Assign a String to a Variable *</span></li>
+<li><span class="annotate"># assigning a string</span>name = "John"</li>
+<li><span class="annotate"># print string</span>print(f"Name: {name}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Assign a Float to a Variable *</span></li>
+<li><span class="annotate"># assigning a float value</span>pi = 3.14159</li>
+<li><span class="annotate"># print float</span>print(f"Value of pi: {pi}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">5: * Example: Assign Boolean to a Variable *</span></li>
+<li><span class="annotate"># assigning boolean value</span>is_active = True</li>
+<li><span class="annotate"># print boolean</span>print(f"Is Active: {is_active}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">6: * Example: Assign None to a Variable *</span></li>
+<li><span class="annotate"># assigning None</span>result = None</li>
+<li><span class="annotate"># print None</span>print(f"Result: {result}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">7: * Example: Assign Multiple Variables in One Line *</span></li>
+<li><span class="annotate"># assigning multiple variables</span>a, b, c = 1, 2, 3</li>
+<li><span class="annotate"># print variables</span>print(f"a: {a}, b: {b}, c: {c}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">8: * Example: Swap Two Variables *</span></li>
+<li><span class="annotate"># swapping variables</span>x, y = 5, 10</li>
+<li><span class="annotate">x, y = y, x</li>
+<li><span class="annotate"># print swapped values</span>print(f"x: {x}, y: {y}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">9: * Example: Assign a List to a Variable *</span></li>
+<li><span class="annotate"># assigning a list</span>colors = ["red", "green", "blue"]</li>
+<li><span class="annotate"># print list</span>print(f"Colors: {colors}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">10: * Example: Assign a Tuple to a Variable *</span></li>
+<li><span class="annotate"># assigning a tuple</span>dimensions = (1920, 1080)</li>
+<li><span class="annotate"># print tuple</span>print(f"Dimensions: {dimensions}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">11: * Example: Assign a Dictionary to a Variable *</span></li>
+<li><span class="annotate"># assigning a dictionary</span>person = {"name": "Alice", "age": 30}</li>
+<li><span class="annotate"># print dictionary</span>print(f"Person: {person}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">12: * Example: Assign and Print Using f-string *</span></li>
+<li><span class="annotate"># assigning variables</span>name = "Bob"</li>
+<li><span class="annotate">age = 28</li>
+<li><span class="annotate"># print using f-string</span>print(f"{name} is {age} years old")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">13: * Example: Assign a Boolean Expression Result *</span></li>
+<li><span class="annotate"># assigning a boolean expression</span>is_adult = age >= 18</li>
+<li><span class="annotate"># print result</span>print(f"Is Adult: {is_adult}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">14: * Example: Assign a Function Return Value *</span></li>
+<li><span class="annotate"># defining a function</span>def greet(): return "Hello"</li>
+<li><span class="annotate"># assigning return value</span>message = greet()</li>
+<li><span class="annotate"># print message</span>print(message)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">15: * Example: Assign a Set to a Variable *</span></li>
+<li><span class="annotate"># assigning a set</span>fruits = {"apple", "banana", "cherry"}</li>
+<li><span class="annotate"># print set</span>print(f"Fruits: {fruits}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">16: * Example: Assign and Update a List *</span></li>
+<li><span class="annotate"># assigning a list</span>numbers = [1, 2, 3]</li>
+<li><span class="annotate"># update list</span>numbers.append(4)</li>
+<li><span class="annotate"># print updated list</span>print(f"Updated List: {numbers}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">17: * Example: Assign and Check Type of Variable *</span></li>
+<li><span class="annotate"># assigning a value</span>value = 3.14</li>
+<li><span class="annotate"># print type</span>print(f"Type: {type(value)}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">18: * Example: Assign Result of a Mathematical Expression *</span></li>
+<li><span class="annotate"># assigning result</span>result = 5 + 3 * 2</li>
+<li><span class="annotate"># print result</span>print(f"Result: {result}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">19: * Example: Assign and Print a Variable Using Format Method *</span></li>
+<li><span class="annotate"># assigning a value</span>temperature = 36.6</li>
+<li><span class="annotate"># print using format method</span>print("Temperature: {}".format(temperature))</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">20: * Example: Assign a Variable and Perform In-Place Addition *</span></li>
+<li><span class="annotate"># assigning a value</span>count = 10</li>
+<li><span class="annotate"># in-place addition</span>count += 5</li>
+<li><span class="annotate"># print updated value</span>print(f"Count: {count}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">21: * Example: Assign a Variable and Perform Floor Division *</span></li>
+<li><span class="annotate"># assigning a value</span>a = 17</li>
+<li><span class="annotate">b = 3</li>
+<li><span class="annotate"># floor division</span>result = a // b</li>
+<li><span class="annotate">print(f"Result: {result}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">22: * Example: Assign Variable with Power of Another Variable *</span></li>
+<li><span class="annotate"># assigning values</span>base = 2</li>
+<li><span class="annotate">exp = 3</li>
+<li><span class="annotate"># power calculation</span>result = base ** exp</li>
+<li><span class="annotate"># print result</span>print(f"{base}^{exp} = {result}")</li>
+
+<!-- More examples can be generated similarly for the remaining 28 variables -->
+
+
+
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Test Your Skills:Variables<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu"style="margin-left:1%;width:98%;padding-left: 0px;padding-right: 0px;margin-right:-3%; background: #000;">
+      <li>
+      <iframe src="mycompiler/testquiz.html"style="border-radius:20px;height:350px;top:0%; width:100%;overflow-x:hidden;overflow-y:auto;scrollbar-width: none;margin-left:-2%;justify-content: center;"></iframe>
+</li></ul>
+  </li>
+
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Python Arithmetic Operators<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+      <li><span class="annotate"># Initialising variables and constants of different data types:</span>
+      score = 0<br>
+      PI = 3.14<br>
+      message = "Hello World"<br>
+      soundOn = True</li>
+      <li><span class="annotate"># Arithmetic Operators:</span>
+        x = a + b  <span class="inline-annotate"># Add</span><br>
+x = a – b    <span class="inline-annotate"># Take away</span><br>
+x = a / b    <span class="inline-annotate"># Divide</span><br>
+x = a * b    <span class="inline-annotate"># Multiply</span><br>
+x = a ** 2    <span class="inline-annotate"># to the power of</span><br>
+x = a // b        <span class="inline-annotate"># Quotient DIV</span><br>
+x = a % b       <span class="inline-annotate"># Remainder MOD</span><br><br>
+x += 1 <span class="inline-annotate"># Increment x by 1</span><br>
+x -= 1 <span class="inline-annotate"># Decrement x by 1</span><br>
+x *= 2 <span class="inline-annotate"># Multiply x by 2</span><br>
+x /= 2 <span class="inline-annotate"># Divide x by 2</span>
+        </li>
+<li><span class="annotate"># Rounding a number:</span>
+      pi = 3.14159<br>
+      pi2 = round(pi,2)<br>
+      print("Pi rounded to two decimal places: " + str(pi2))   <span class="inline-annotate"># 3.14</span>
+</li></ul>
+  </li>
+
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Selection: if, elif, else...<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+<li>if numberOfLives == 0:<br>
+&nbsp;&nbsp;&nbsp;print("Game Over!")
+</li><li>if numberOfLives == 0 or timer&lt;=0:<br>
+&nbsp;&nbsp;&nbsp;print("Game Over!")<br>  
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Carry on playing!")
+</li><li>if number &lt; 0:<br>
+&nbsp;&nbsp;&nbsp;print("Negative Number")<br>
+elif number == 0:<br>
+&nbsp;&nbsp;&nbsp;print("Zero")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Positive Number")
+</li><li>if number == 7:<br>
+&nbsp;&nbsp;&nbsp;print("Seven")<br>
+elif number == 8:<br>
+&nbsp;&nbsp;&nbsp;print("Eight")<br>
+elif number == 9:<br>
+&nbsp;&nbsp;&nbsp;print("Nine")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Not seven, eight or nine")</li>
+    </ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Iteration: for loops &amp; While loops<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+    <li>
+      <span class="annotate"># For loop to count from 1 to 10</span>      
+for i in range(1,11):<br>
+&nbsp;&nbsp;&nbsp;print(i)
+    </li><li>  
+      <span class="annotate"># For loop to count in 5 from 0 to 100</span>
+      for i in range(0,101,5):<br>
+&nbsp;&nbsp;&nbsp;print(i)
+    </li><li>
+      <span class="annotate"># For loop to count down from 10 to 1 using a negative step</span>      
+for i in range(10,0,-1):<br>
+&nbsp;&nbsp;&nbsp;print(i)
+    </li><li>
+      <span class="annotate"># Iterate through all the values of a list</span>
+days = ["Mon", "Tue", "Wed", "Thu", "Fri"]<br>
+for i in range(0,len(days)):<br>
+&nbsp;&nbsp;&nbsp;print(days[i])
+    </li><li>
+      <span class="annotate"># Iterate through all the values of a list - Alternative approach</span>
+for day in days:<br>
+&nbsp;&nbsp;&nbsp;print(day)
+    </li><li>
+      <span class="annotate"># Iterate through all the chracters of a string string</span>
+string = "Hello World"<br>
+for character in string:<br>
+&nbsp;&nbsp;&nbsp;print(character)
+   </li><li>
+   <span class="annotate"># Using a while loop</span>   
+i=0<br>
+while i&lt;=100:<br>
+&nbsp;&nbsp;&nbsp;print(i)<br>
+&nbsp;&nbsp;&nbsp;i = i + 1
+</li><li><span class="annotate"># To exit from/break a loop at any time:</span>
+while True:<br>
+&nbsp;&nbsp;&nbsp;# ...<br>      
+    &nbsp;&nbsp;&nbsp;if timer==0:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break
+</li>
+</ul>
+  </li>
+   
+   <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Functions<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+      <li><span class="annotate"># Define a new procedure</span>def displayBanner(message):<br>
+&nbsp;&nbsp;&nbsp;print("---------------")<br>
+&nbsp;&nbsp;&nbsp;print(message)<br>
+&nbsp;&nbsp;&nbsp;print("---------------")<br>
+<br>
+<span class="annotate"># Procedure call</span>
+displayBanner("Hello World!")</li>
+<li><span class="annotate"># Define a new function</span>def add(x, y):<br>
+&nbsp;&nbsp;&nbsp;sum = x + y<br>
+&nbsp;&nbsp;&nbsp;return sum<br>
+<br>
+<span class="annotate"># Function call</span>
+total = add(1,3)
+<br>print(total)  <span class="inline-annotate"># this would display 4</span>
+      </li> 
+     </ul>
+  </li>   
+   <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>String Manipulation<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+    <li>
+      <span class="annotate"># String Concatenation</span>
+firstname = "James"<br>
+lastname = "Bond"<br>
+greeting = "Hello " + firstname + " " + lastname<br> 
+print(greeting)</li>
+<li>
+      <span class="annotate"># Casting a number into a String</span>
+number = 7<br>
+print("Your lucky number is " + str(number))
+</li>
+
+<li>
+<span class="annotate"># Changing the case of a string</span>
+name = "james BOND"<br>
+uppercase = name.upper()<span class="inline-annotate"> # JAMES BOND</span><br>
+lowercase = name.lower()<span class="inline-annotate"> # james bond</span><br>
+titlecase = name.title()<span class="inline-annotate"> # James Bond</span><br>
+   </li>
+<li>
+<span class="annotate"># Retrieving the number of characters in a string</span>
+password = "Pa55w0rd"<br>
+passwordLength = len(password)<span class="inline-annotate"> # 8</span><br>
+   </li>
+<li>
+<span class="annotate"># String Slicing: Extracting characters from a string</span>	
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"<br>
+print("The fifth letter of the alphabet is: " + alphabet[4])<br>
+print("The first 5 letters of the alphabet are: " + alphabet[:5])<br>
+print("The next 5 letters of the alphabet are: " + alphabet[5:10])<br>
+print("The last 5 letters of the alphabet are: " + alphabet[-5:])
+  </li> 
+<li>
+      <span class="annotate"># Iterate through all the chracters of a string</span>
+string = "Hello World"<br>
+for character in string:<br>
+&nbsp;&nbsp;&nbsp;print(character)
+   </li>     </ul>
+  </li> 
+   <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Random Library<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+    <li>
+      <span class="annotate"># Import the random library</span>
+import random<br>
+      </li><li>  
+      <span class="annotate"># Generate a random number between 1 and 100</span>
+randomNumber = random.randint(1,100)
+      </li><li>
+      <span class="annotate"># Pick a value in a list at random</span>
+names = ["Fred","Ali","Ines"]<br>
+      randomName = random.choice(names)</li><li>  
+      <span class="annotate"># Use ASCII codes to generate a random letter between A and Z</span>
+randomLetter = chr(random.randint(65,90))
+      </li>
+     </ul>
+  </li> 
+      <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Data Structures: Lists, Tuples and Dictionaries<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu"><li>
+<span class="annotate"># Declaring a list and accessing its values</span>
+days = ["Mon","Tue","Wed","Thu","Fri","Sat"]<br>
+days.append("Sun")<br>
+print(days[0])      <span class="inline-annotate"># "Mon"</span><br>
+print(days[1])      <span class="inline-annotate"># "Tue"</span><br>
+print(days[2])      <span class="inline-annotate"># "Wed</span><br>
+…<br>
+print(days[6])      <span class="inline-annotate"># "Sun"</span>
+</li><li>
+<span class="annotate"># Finding out the number of items in a list (length of a list)</span>
+print(len(days)) <span class="inline-annotate"># 7</span>
+</li><li>
+<span class="annotate"># Iterate through all the values of a list</span>
+for i in range(0,len(days)):<br>
+&nbsp;&nbsp;&nbsp;print(days[i])
+</li><li>
+<span class="annotate"># Iterate through all the values of a list - Alternative method</span>
+for value in days:<br>
+&nbsp;&nbsp;&nbsp;print(value)
+      </li>
+<li>
+<span class="annotate"># Iterate through all the values of a list - Alternative method</span>
+for value in days:<br>
+&nbsp;&nbsp;&nbsp;print(value)
+      </li>	  
+<li>
+<span class="annotate"># Adding a new value at the end of a list</span>
+numbers = [1,3,5]<br>
+numbers.append(7)
+</li>
+<li>
+<span class="annotate"># Removing a value from a list</span>
+days = ["Mon","Tue","Wed","Thu","Fri"]<br>
+numbers.remove("Wed")
+</li>
+<li>
+<span class="annotate"># Removing a value from a list at a given position</span>
+days = ["Mon","Tue","Wed","Thu","Fri"]<br>
+numbers.pop(2) <span class="inline-annotate"># remove the third item from this list: "Wed"</span><br>
+</li>
+<li>
+<span class="annotate"># Declaring a tuple</span>
+magenta = (255,0,255)<br>
+print("R: " + str(magenta[0]))<br>
+print("G: " + str(magenta[1]))<br>
+print("B: " + str(magenta[2]))
+</li>
+<li>
+<span class="annotate"># Using a Dictionary (Hash table)</span>
+dictionary = {"One":"Un", "Two":"Deux", "Three":"Trois"}<br>
+print("One in French is " + dictionary["One"])</li>
+
+<li>
+<span class="annotate"># Adding an extra key to a dictionary</span>
+dictionary["Four"] = "Quatre" 
+</li>
+</ul>
+  </li>
+      <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>File Handling<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+ <li>
+<span class="annotate"># Reading a text file, line by line</span>
+file = open("myTextFile.txt","r")<br>
+for line in file:<br>
+&nbsp;&nbsp;&nbsp;print(line)<br>
+file.close()
+</li> 
+<li>
+<span class="annotate"># Reading and extracting data from a CSV file, line by line</span>
+file = open("myTextFile.txt","r")<br>
+for line in file:<br>
+&nbsp;&nbsp;&nbsp;data = line.split(",")<br>
+&nbsp;&nbsp;&nbsp;print(data[0] + " - " + data[1] + " - " + data[2])<br>
+file.close()
+</li> 
+ 
+<li>
+<span class="annotate"># Overwriting the content of a text file</span>
+file = open("myTextFile.txt","w")<br>
+file.write("Hello World\n")<br>
+file.close()
+</li> 
+<li>
+<span class="annotate"># Appending data at the end of a text file</span>
+file = open("myTextFile.txt","a")<br>
+file.write("Hello World\n")<br>
+file.close()
+</li> 
+     </ul>
+  </li>
+   
+      <li>
+    <div class="link"><span class="material-symbols-outlined">
+</span>Input Validation<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+    <ul class="submenu">
+<li>
+<span class="annotate"># Input Validation: Presence Check</span>
+name = input("Enter your name:")<br>
+if name=="":<br>
+&nbsp;&nbsp;&nbsp;print("Empty name!")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Thank you!")
+</li> 
+<li>
+<span class="annotate"># Input Validation: Type Check – Integer?</span>
+number = input("Type a number:")<br>
+if number.isdigit():<br>
+&nbsp;&nbsp;&nbsp;print("This is a number")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("This is not a whole number")
+</li> 
+<li>
+<span class="annotate"># Input Validation: Range Check</span>
+number = int(input("Type a number between 1 and 5:"))<br>
+if number&gt;=1 and number&lt;=5:<br>
+&nbsp;&nbsp;&nbsp;print("Valid number")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Invalid number")
+</li> 
+<li>
+<span class="annotate"># Input Validation: Lookup Check</span>
+drive = input("Can you drive?").lower()<br>
+if drive in ["yes","no"]:<br>
+&nbsp;&nbsp;&nbsp;print("Valid answer")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Invalid answer")
+</li> 
+<li>
+<span class="annotate"># Input Validation: Character Check</span>
+email = input("Type your e-mail address:")<br>
+if "@" in email:<br>
+&nbsp;&nbsp;&nbsp;print("Valid e-mail address")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Invalid e-mail address")
+</li> 
+<li>
+<span class="annotate"># Input Validation: Length Check</span>
+password = input("Type a password:")<br>
+if len(password)&gt;=8:<br>
+&nbsp;&nbsp;&nbsp;print("Valid password")<br>
+else:<br>
+&nbsp;&nbsp;&nbsp;print("Invalid password")
+</li> 
+<li>
+<span class="annotate"># Try Again! Using a While Loop:</span>
+name = input("Enter your name:")<br>
+while name=="":<br>
+&nbsp;&nbsp;&nbsp;print("You must enter your name! Please try again!")<br>
+&nbsp;&nbsp;&nbsp;name = input("Enter your name:")<br>
+print("Welcome " +  name)
+</li>
+</ul>
+</li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Intro<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ 
+
+
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">5: * Example: Print numbers *</span></li>
+<li><span class="annotate"># Print an integer</span>print(100)</li>
+<li><span class="annotate"># Print a float</span>print(3.14)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">6: * Example: Concatenate strings *</span></li>
+<li><span class="annotate"># Declare string variables</span>greeting = "Hello"</li>
+<li><span class="annotate"># Declare another string variable</span>name = "Charlie"</li>
+<li><span class="annotate"># Concatenate and print</span>print(greeting + ", " + name + "!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">7: * Example: Print escape characters *</span></li>
+<li><span class="annotate"># Print with new line</span>print("Hello\nWorld")</li>
+<li><span class="annotate"># Print with tab space</span>print("Hello\tWorld")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">8: * Example: Print a list *</span></li>
+<li><span class="annotate"># Declare a list</span>fruits = ["apple", "banana", "cherry"]</li>
+<li><span class="annotate"># Print the list</span>print(fruits)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">9: * Example: Suppress newline in print *</span></li>
+<li><span class="annotate"># Print without new line</span>print("Hello", end=" ")</li>
+<li><span class="annotate"># Continue on the same line</span>print("World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">10: * Example: Print a formatted float *</span></li>
+<li><span class="annotate"># Print a formatted float with 2 decimal places</span>print(f"Pi is approximately: {3.14159:.2f}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">11: * Example: Print with padding *</span></li>
+<li><span class="annotate"># Print with padding</span>print(f"Number: {7:03}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">12: * Example: Print left-aligned text *</span></li>
+<li><span class="annotate"># Print left-aligned text</span>print(f"{'Hello':<10} World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">13: * Example: Print right-aligned text *</span></li>
+<li><span class="annotate"># Print right-aligned text</span>print(f"{'Hello':>10} World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">14: * Example: Print centered text *</span></li>
+<li><span class="annotate"># Print centered text</span>print(f"{'Hello':^10} World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">15: * Example: Print with string interpolation *</span></li>
+<li><span class="annotate"># String interpolation in print</span>name = "Alice"</li>
+<li><span class="annotate"># Print interpolated string</span>print(f"Hello, {name}!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">16: * Example: Print a complex number *</span></li>
+<li><span class="annotate"># Print a complex number</span>print(3 + 5j)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">17: * Example: Print boolean expressions *</span></li>
+<li><span class="annotate"># Print a boolean expression</span>print(5 > 3)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">18: * Example: Print file content *</span></li>
+<li><span class="annotate"># Print content of a file</span>with open('example.txt', 'r') as file:</li>
+<li><span class="annotate"></span>    print(file.read())</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">19: * Example: Print with a loop *</span></li>
+<li><span class="annotate"># Print numbers using a loop</span>for i in range(5):</li>
+<li><span class="annotate"></span>    print(i)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">20: * Example: Print exception handling *</span></li>
+<li><span class="annotate"># Print an error message in exception handling</span>try:</li>
+<li><span class="annotate"></span>    result = 10 / 0</li>
+<li><span class="annotate">except ZeroDivisionError:</span></li>
+<li><span class="annotate"></span>    print("Error: Division by zero!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">21: * Example: Print list comprehension *</span></li>
+<li><span class="annotate"># Print list comprehension result</span>numbers = [x**2 for x in range(5)]</li>
+<li><span class="annotate"></span>print(numbers)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">22: * Example: Print date and time *</span></li>
+<li><span class="annotate"># Print the current date and time</span>import datetime</li>
+<li><span class="annotate">print(datetime.datetime.now())</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">23: * Example: Print memory address of a variable *</span></li>
+<li><span class="annotate"># Print memory address of a variable</span>x = 10</li>
+<li><span class="annotate">print(hex(id(x)))</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">24: * Example: Print formatted dictionary *</span></li>
+<li><span class="annotate"># Print formatted dictionary</span>my_dict = {"name": "John", "age": 30}</li>
+<li><span class="annotate">print(f"Name: {my_dict['name']}, Age: {my_dict['age']}")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">25: * Example: Print after importing a module *</span></li>
+<li><span class="annotate"># Import math module and print a value</span>import math</li>
+<li><span class="annotate">print(math.pi)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">26: * Example: Print bytes *</span></li>
+<li><span class="annotate"># Print a byte object</span>byte_data = b"Hello"</li>
+<li><span class="annotate">print(byte_data)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">27: * Example: Print list elements on separate lines *</span></li>
+<li><span class="annotate"># Print each element of a list on a new line</span>fruits = ["apple", "banana", "cherry"]</li>
+<li><span class="annotate">for fruit in fruits:</span></li>
+<li><span class="annotate"></span>    print(fruit)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">28: * Example: Print with keyword arguments *</span></li>
+<li><span class="annotate"># Print using keyword arguments</span>print("Hello", "World", sep="-", end="!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">29: * Example: Print a tuple *</span></li>
+<li><span class="annotate"># Print a tuple</span>my_tuple = (1, 2, 3)</li>
+<li><span class="annotate">print(my_tuple)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">30: * Example: Print set elements *</span></li>
+<li><span class="annotate"># Print elements of a set</span>my_set = {1, 2, 3}</li>
+<li><span class="annotate">print(my_set)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">31: * Example: Print None type *</span></li>
+<li><span class="annotate"># Print a None value</span>x = None</li>
+<li><span class="annotate">print(x)</li>   
+</ul>
+  </li>
+
+  
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Syntax: print()<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Comments<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Variables<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Numbers<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Casting<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Strings<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Booleans<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Operators<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Lists<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Tuples<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Sets<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Dictionaries<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python If...Else<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python While Loops<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python For Loops<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+  <li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Functions<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Lambda<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Arrays<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Classes/Objects<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Inheritance<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Iterators<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Modules:NumPy<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Modules:Panda<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+    <div class="link"><span class="material-symbols-outlined">
+
+</span>Python Machine Learning<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+
+    <ul class="submenu">
+ <li><span style="color:green;font-size: 11px;font-weight: bold;text-align:center;">The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.</span></li>
+   <li><span style="color:red;font-size: 12px;font-weight: bold;">1: * Example: Print a string *</span></li>
+<li><span class="annotate"># Print a string</span>print("Hello, World!")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">2: * Example: Print multiple values *</span></li>
+<li><span class="annotate"># Print multiple values</span>print("Hello", "World")</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">3: * Example: Print variables *</span></li>
+<li><span class="annotate"># Declare a variable</span>name = "Alice"</li>
+<li><span class="annotate"># Declare another variable</span>age = 25</li>
+<li><span class="annotate"># Print variables</span>print("Name:", name, "Age:", age)</li>
+
+<li><span style="color:red;font-size: 12px;font-weight: bold;">4: * Example: Use f-string *</span></li>
+<li><span class="annotate"># Declare variables</span>name = "Bob"</li>
+<li><span class="annotate"># Declare another variable</span>age = 30</li>
+<li><span class="annotate"># Use f-string to print</span>print(f"My name is {name} and I am {age} years old.")</li>   
+</ul>
+  </li>
+
+<li>
+<div class="link">OOP<span class="chevron material-symbols-outlined"><<img src="./mycompiler/python-101.png" width="17" align="absmiddle">></span></div>
+<ul class="submenu">
+    <li>import random<br><br>
+<span class="annotate"># Defining a Dice class</span>	
+class Dice():
+<span class="annotate">&nbsp;&nbsp;&nbsp;# Constructor for the Dice class</span>
+&nbsp;&nbsp;&nbsp;def __init__(self,numberOfSides=6):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.numberOfSides = numberOfSides<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.value = 1<br><br>
+&nbsp;&nbsp;&nbsp;def throw(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.value = random.randint(1,self.numberOfSides)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.value<br><br>
+<span class="annotate"># Instantiating a dice object using the Dice class</span>   
+dice = Dice(6)<br>
+dice.throw()<br>
+print(dice.value)
+</li>
+</ul>
+</li>
+
+</ul>
+ </div>
+  </div></div>
+
+</div>
+<textarea id="interactive" style="display: none;"></textarea>
+<script src="./mycompiler/jquery.min.js.download"></script>
+<script src="./mycompiler/skulpt.min.js.download"></script>
+<script src="./mycompiler/skulpt-stdlib.js.download"></script>
+<script src="./mycompiler/codemirrorepl.js.download"></script>
+<script src="./mycompiler/python.js.download"></script>
+<script>
+var theme="midnight";
+</script>
+<script src="./mycompiler/script.js.download"></script>
+<script src="./mycompiler/codemirror.js.download"></script>
+<script src="./mycompiler/addons.js.download"></script>
+<script>new Tab("#tab");
+
+ $("#newWindow").click(function (e) {
+   window.open("index.php?theme="+theme, '_blank', 'width=' + screen.width + ', height=' + screen.height + ',top=0,left=0,toolbar=no,scrollbars=yes,status=no,menubar=no,fullscreen=yes');
+  } ); 
+   
+</script>
+	
+<script>
+ window.onbeforeunload = function (e) {
+    e = e || window.event;
+
+    // For IE and Firefox prior to version 4
+    if (e) {
+        e.returnValue = 'By exiting this window you will lose all changes you have made to your code. Are you sure you want to exit this window?';
+    }
+
+    // For Safari
+    return 'By exiting this window you will lose all changes you have made to your code. Are you sure you want to exit this window?';
+};
+$("#resetBtn").click(function (e) {
+location.reload();
+});
+
+$(function() {
+	var Accordion = function(el, multiple) {
+		this.el = el || {};
+		this.multiple = multiple || false;
+
+		// Variables privadas
+		var links = this.el.find('.link');
+		// Evento
+		links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+	}
+
+	Accordion.prototype.dropdown = function(e) {
+		var $el = e.data.el;
+			$this = $(this),
+			$next = $this.next();
+
+		$next.slideToggle();
+		$this.parent().toggleClass('open');
+
+		if (!e.data.multiple) {
+			$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+		};
+	}	
+
+	var accordion = new Accordion($('#accordion'), false);
+});
+
+
+document.querySelector(".side-panel-toggle").addEventListener("click", () => {
+  document.querySelector(".wrapper").classList.toggle("side-panel-open");
+});
+ 
+</script>
+
+
+<span id="PING_CONTENT_DLS_POPUP" style="display: none;"></span><div style="background-color: transparent; border: none; bottom: 15px; display: block; margin: 0px; opacity: 1; padding: 0px; position: fixed; right: 15px; z-index: 2147483647;"><template shadowrootmode="closed"><style>/*!
+
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&display=swap);
+*{border:0;box-sizing:border-box;font:inherit;font-family:"mcafeeOpenSans","Poppins",Helvetica,Arial,Arial,Helvetica,sans-serif;font-size:100%;margin:0;padding:0;vertical-align:baseline;outline:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html,body{background-color:#f5f6fa;font-family:"Poppins",Helvetica,Arial,"mcafeeOpenSans",Arial,Helvetica,sans-serif;line-height:1;height:100%;width:100%}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}b{font-weight:bold}img{display:block}.dls__container{align-items:center;display:flex;margin:0 auto;margin-top:50px;position:relative}.dls__popup__expanded{align-items:center;overflow:hidden;border-radius:100px;cursor:pointer;display:flex;left:0;padding:15px;position:absolute;height:95px;width:383px;background-color:#fff;transition:all .3s ease-in-out}.dls__popup__expanded .dls__icon{height:65px;width:73px}.content{margin-left:12px}.content .content__images{display:flex;align-items:center;width:250px}.content .content__images .seperator__line{margin-left:5px;margin-right:10px}.content .content__images #dls_close_icon{cursor:pointer;margin-left:auto;margin-right:0px}.content p{font-family:"Poppins",Arial,Helvetica,sans-serif;font-weight:"400";font-size:14px;line-height:20px;margin-top:8px;color:#4258ff;width:250px;cursor:pointer}.shield{overflow:hidden;box-shadow:0px 2px 4px 0px rgba(33,41,52,.12),0px -1px 2px 0px rgba(0,0,0,.08);align-items:center;border-radius:100px;bottom:0;display:flex;height:95px;justify-content:center;position:absolute;right:0;width:383px;transition:all .3s ease-in-out}.shield__circle{display:flex;justify-content:center;align-items:center;width:55px;height:55px;background-color:#c01818;transition:all .6s ease-in-out .2s;z-index:1;opacity:0}
+
+/*# sourceMappingURL=../sourceMap/chrome/css/download_scan_popup.css.map*/</style><div class="dls__container">
+  <div class="shield" style="background: transparent; opacity: 0.1; display: none;">
+    <div class="shield__circle" style="opacity: 1;">
+      <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/mcafee_logo_white.svg?secret=lqli7s" x-mcsrc="" id="dls_ballon_icon" x-mcsrcparsed="true">
+    </div>
+    <div class="dls__popup__expanded" style="opacity: 0;">
+      <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/download_scan_icon.svg?secret=lqli7s" x-mcsrc="" class="dls__icon" x-mcsrcparsed="true">
+      <div class="content">
+        <div class="content__images">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/mcafee_logo_red.svg?secret=lqli7s" x-mcsrc="" id="dls_mcafee_logo" x-mcsrcparsed="true">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/seperator_line.svg?secret=lqli7s" x-mcsrc="" class="seperator__line" x-mcsrcparsed="true">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/webadvisor.svg?secret=lqli7s" x-mcsrc="" x-mcsrcparsed="true">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/close-outline.svg?secret=lqli7s" x-mcsrc="" id="dls_close_icon" x-mcsrcparsed="true">
+        </div>
+        <p id="download_scan_popup_expanded_descriptions">Your download's being scanned. We'll let you know if there's an issue.</p>
+      </div>
+    </div>
+  </div>
+</div><style>
+.mc-interactive-balloon{position:absolute;right:-50px;bottom:8px;box-shadow:rgba(0,0,0,.12) 0px 0px 10px;height:40px;width:40px;background:#1671ee;border-radius:20px;display:flex;justify-content:center;align-items:center}
+
+/*# sourceMappingURL=../sourceMap/chrome/css/interactive_balloon.css.map*/</style></template></div></body></html>
